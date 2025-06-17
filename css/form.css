@@ -1,0 +1,38 @@
+@import url(listprod.css);
+
+.validade {
+    max-width: 400px;
+    margin:auto;
+    padding: 4rem 2rem;
+}
+
+.form__validade_prod .line {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form__validade_prod .line .input_container {
+    display: flex;
+    gap: .5rem;
+}
+
+.form__validade_prod .line .input_container input {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border: 1px solid #DEE2E6;
+    border-radius: 5px;
+    margin: 8px 0;
+}
+
+.form__validade_prod .line .result_container {
+    border: 1px solid #DEE2E6;
+    background-color: #DEE2E6;
+    padding: .7rem;
+    border-radius: 5px;
+    margin: .5rem 0;
+    width: 1000px;
+}
+
+.form__validade_prod .line .data_container {
+    margin: 0 0 1rem 0;
+}
