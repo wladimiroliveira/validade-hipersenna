@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/form.css">
     <script src="./js/dados.js" defer></script>
     <script src="./js/formProd.js?=2" defer></script>
+    <script src="./js/descricao.js" defer></script>
     <title>Validade</title>
 </head>
 <body>
@@ -25,12 +26,18 @@
                 <div class="input_container">
                     <input type="number" class="form-control" id="codProd" required>
                     <div class="result_container">
-                        <p class="result"></p>
+                        <p class="result_descricao"></p>
                     </div>
                 </div>
-                <div class="data_container">
-                    <label for="data">Data de validade</label>
-                    <input type="date" name="data" id="data" class="form-control" required>
+                <div class="data-quantidade_container">
+                    <div class="input__data_container">
+                        <label for="data">Data de validade</label>
+                        <input type="date" name="data" id="data" class="form-control" required>
+                    </div>
+                    <div class="input__quantidade_container">
+                        <label for="quantidade">Quantidade</label>
+                        <input type="number" name="quantidade" id="quantidade" class="form-control" required>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-secondary" id="prodInserir">Inserir</button>
                 <div class="form-text">Digite o código do produto e espere o sistema encontrar a descrição correta</div>
@@ -43,6 +50,7 @@
                             <th scope="col">Código</th>
                             <th scope="col">Desc</th>
                             <th scope="col">Dt. Validade</th>
+                            <th scope="col">Quant.</th>
                             <th scope="col">Ações</th>
                         </tr>
                     </thead>

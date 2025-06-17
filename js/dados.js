@@ -4,7 +4,6 @@ window.dados = {
         'matricula': ''
     },
     'prod': {
-        'codprod': [],
-        'validade': []
+        'itens': []
     }
 }

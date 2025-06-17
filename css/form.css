@@ -33,6 +33,28 @@
     width: 1000px;
 }
 
-.form__validade_prod .line .data_container {
+.form__validade_prod .line .result_container p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.form__validade_prod .line .data-quantidade_container {
+    display: flex;
     margin: 0 0 1rem 0;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    .validade {
+        max-width: 800px;
+    }
+    
+    .form__validade_prod .line .input_container input {
+        width: 20%;
+    }
+
+    .form__validade_prod .line .result_container {
+        width: 80%;
+    }
 }
