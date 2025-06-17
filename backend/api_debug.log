@@ -1,0 +1,45 @@
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Dados recebidos com sucesso"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Dados recebidos com sucesso"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Dados recebidos com sucesso"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Dados recebidos com sucesso"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Dados recebidos com sucesso","dados":{"nome":"Wladimir","matricula":"4455"}}
