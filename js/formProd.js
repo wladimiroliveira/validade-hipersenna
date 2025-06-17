@@ -61,3 +61,24 @@ prodList.addEventListener('click', function(e) {
 });
 
 renderTable();
+
+formProd.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+
+    try {
+        const response = await fetch('http://localhost/validade_hipersenna/backend/dadosValidade.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(dados)
+        });
+
+        const text = await response.text(); // ✅ Agora `response` existe
+        console.log("Resposta bruta:", text);
+
+    } catch (e) {
+        console.error('Erro ao interpretar JSON:', e);
+        alert('Erro inesperado na resposta do servidor.');
+    }
+})
