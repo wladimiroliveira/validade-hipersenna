@@ -43,3 +43,39 @@ Dados: Array
 
 HTTP Code: 200
 Resposta: {"sucesso":true,"mensagem":"Dados recebidos com sucesso","dados":{"nome":"Wladimir","matricula":"4455"}}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Dados recebidos com sucesso","dados":{"nome":"Wladimir","matricula":"4455"}}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+)
+
+HTTP Code: 400
+Resposta: {"sucesso":false,"mensagem":"Campo 'nome' \u00e9 obrigat\u00f3rio"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"1"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir Moraes Oliveira
+    [matricula] => 4455
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}

@@ -47,14 +47,14 @@ $user = [
     'matricula' => $dados['user']['matricula']
 ];
 
-$token = '2f5cf3d19453e8c3027ac6f9d6b3972b'; // Token
+$colabToken = '2f5cf3d19453e8c3027ac6f9d6b3972b'; // colabToken
 
 // Configurações das APIs
 $urlColab = 'https://hipersenna.com.br/dev_assets/api/colab/colab.php';
 $urlValidade = 'https://hipersenna.com.br/dev_assets/api/validade/validade.php';
 
 // Função para enviar dados para a API
-function sendDados($url, $dados, $token){
+function sendDados($url, $dados, $colabToken){
     file_put_contents('api_debug.log', "Enviando para: $url\n", FILE_APPEND);
     file_put_contents('api_debug.log', "Dados: " . print_r($dados, true) . "\n", FILE_APPEND);
 
@@ -64,7 +64,7 @@ function sendDados($url, $dados, $token){
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dados));
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         'Content-Type: application/json',
-        'Authorization: Bearer ' . $token
+        'Authorization: Bearer ' . $colabToken
     ]);
 
     $response = curl_exec($ch);
@@ -88,7 +88,7 @@ function sendDados($url, $dados, $token){
 };
 
 // Enviar dados do usuário
-$colabResponse = sendDados($urlColab, $user, $token);
+$colabResponse = sendDados($urlColab, $user, $colabToken);
 
 if ($colabResponse['httpCode'] !== 200) {
     http_response_code(500);
@@ -105,11 +105,4 @@ if ($colabResponse['httpCode'] !== 200) {
     ]);
     exit;
 }
-
-http_response_code($colabResponse['httpCode']);
-echo json_encode([
-    'sucesso' => true,
-    'mensagem' => 'Cliente cadastrado com sucesso',
-    'detalhes' => $colabResponse['response']
-]);
 exit;
