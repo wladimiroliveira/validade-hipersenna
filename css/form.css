@@ -51,6 +51,13 @@
     display: flex;
     margin: 0 0 1rem 0;
     gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.button_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media screen and (min-width: 600px) {

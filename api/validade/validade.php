@@ -65,8 +65,8 @@ try {
             'mensagem' => 'Colaborador cadastrado com sucesso',
             'id' => $novoId
         ]);
-        exit;
     }
+    exit;
 } catch (Exception $e) {
     http_response_code($e->getCode() ?: 500);
     ob_end_clean();

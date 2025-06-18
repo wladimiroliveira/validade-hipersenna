@@ -101,7 +101,7 @@ formProd.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify(dados)
         });
-        
+
         const result = await response.json();
         console.log("Resposta:", result);
 
