@@ -15,3 +15,9 @@
     --dark-conforto: #6B8F71;
     --dark-background: #070707;
 }
+
+body {
+    position: relative;
+    padding: 2rem;
+    overflow-x: hidden;
+}
