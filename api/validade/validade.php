@@ -1,4 +1,4 @@
-<?php
+<?php 
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS");
@@ -27,6 +27,8 @@ try {
     exit;
 }
 
+// Trata os dados recebidos
+
 try {
     $input = json_decode($rawInput, true);
     if($input === null) {
@@ -34,54 +36,40 @@ try {
     }
 
     // Campos obrigatórios
-    $requiredFields = ['nome', 'matricula', 'filial'];
-    foreach ($requiredFields as $field){
-        if(empty($input[$field])) {
-            throw new Exception("Campo '$field' é obrigatório", 400);
+    $requiredFields = ['codprod', 'descricao', 'validade', 'quantidade'];
+    foreach ($input['itens'] as $item) {
+        foreach ($requiredFields as $field) {
+            if (empty($item[$field])) {
+                throw new Exception("Campo '$field' é obrigatório para o produto {$item['codprod']}", 400);
+            }
         }
     }
 
-    // Inserção no banco de dados
-    $stmt = $pdo->prepare("SELECT matricula FROM colab WHERE matricula = :matricula");
-    $stmt->execute(['matricula' => $input['matricula']]);
-    $colabExists = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Adicionar informações na tabela validade_produto
+    foreach ($input['itens'] as $item) {
+        $stmt = $pdo->prepare("INSERT INTO validade_produto (cod_produto, data_validade, quantidade, cod_filial, colaborador_id) VALUES (:codprod, :validade, :quantidade, :filial, :colab_id)");
+        $stmt->execute([
+            'codprod' => $item['codprod'],
+            'validade' => $item['validade'],
+            'quantidade' => $item['quantidade'],
+            'filial' => $input['filial'],
+            'colab_id' => $input['colab_id']
+        ]);
 
-    if($colabExists){
-        // Cliente já existe, coleta o ID
+        $novoId = $pdo->lastInsertId();
+
         http_response_code(200);
         ob_end_clean();
         echo json_encode([
             'sucesso' => true,
-            'mensagem' => 'Colaborador já cadastrado',
-            'id' => $colabExists['id']
+            'mensagem' => 'Colaborador cadastrado com sucesso',
+            'id' => $novoId
         ]);
         exit;
     }
-
-    // Inserir novo colaborador
-    $stmt = $pdo->prepare("INSERT INTO colab (nome, matricula) VALUES (:nome, :matricula)");
-    $stmt->execute([
-        'nome' => $input['nome'],
-        'matricula' => $input['matricula']
-    ]);
-
-    $novoId = $pdo->lastInsertId();
-
-    http_response_code(200);
-    ob_end_clean();
-    echo json_encode([
-        'sucesso' => true,
-        'mensagem' => 'Colaborador cadastrado com sucesso',
-        'id' => $novoId
-    ]);
-    exit;
 } catch (Exception $e) {
-    // Captura erros e retorna mensagem apropriada
     http_response_code($e->getCode() ?: 500);
     ob_end_clean();
-    echo json_encode([
-        'sucesso' => false,
-        'mensagem' => $e->getMessage()
-    ]);
+    echo json_encode(['sucesso' => false, 'mensagem' => $e->getMessage()]);
     exit;
 }

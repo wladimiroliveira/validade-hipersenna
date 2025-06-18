@@ -25,6 +25,7 @@ $erros = [];
 
 if (empty($dados['user']['nome'])) $erros[] = "Nome e obrigatorio";
 if (empty($dados['user']['matricula'])) $erros[] = "Matricula e obrigatoria";
+if (empty($dados['user']['filial'])) $erros[] = "Filial e obrigatoria";
 if (empty($dados['prod']['itens']) || !is_array($dados['prod']['itens']) || count($dados['prod']['itens']) === 0) {
     $erros[] = "Pelo menos um produto deve ser informado";
 } else {
@@ -44,7 +45,8 @@ if (!empty($erros)){
 
 $user = [
     'nome' => $dados['user']['nome'],
-    'matricula' => $dados['user']['matricula']
+    'matricula' => $dados['user']['matricula'],
+    'filial' => $dados['user']['filial']
 ];
 
 $colabToken = '2f5cf3d19453e8c3027ac6f9d6b3972b'; // colabToken
@@ -55,9 +57,6 @@ $urlValidade = 'https://hipersenna.com.br/dev_assets/api/validade/validade.php';
 
 // Função para enviar dados para a API
 function sendDados($url, $dados, $colabToken){
-    file_put_contents('api_debug.log', "Enviando para: $url\n", FILE_APPEND);
-    file_put_contents('api_debug.log', "Dados: " . print_r($dados, true) . "\n", FILE_APPEND);
-
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
@@ -105,4 +104,36 @@ if ($colabResponse['httpCode'] !== 200) {
     ]);
     exit;
 }
+
+// Enviar dados de validade
+$prods = [
+    'itens' => $dados['prod']['itens'],
+    'colab_id' => $colabResponse['response']['id'] ?? null,
+    'filial' => $dados['user']['filial']
+];
+
+$validadeResponse = sendDados($urlValidade, $prods, $colabToken);
+if ($validadeResponse['httpCode'] !== 200) {
+    http_response_code(500);
+    echo json_encode([
+        'sucesso' => false, 
+        'mensagem' => 'Erro ao cadastrar validade',
+        'detalhes' => $validadeResponse['response'] ?? null,
+        'debug' => [
+            'url_api' => $urlValidade,
+            'dados_enviados' => $dados['prod']['itens'],
+            'resposta_http' => $validadeResponse['httpCode'],
+            'resposta_completa' => $validadeResponse
+        ]
+    ]);
+    exit;
+}
+
+echo json_encode([
+    'sucesso' => true,
+    'mensagem' => 'Dados cadastrados com sucesso',
+    'colab_id' => $colabResponse['response']['id'] ?? null,
+    'validade_id' => $validadeResponse['response']['id'] ?? null
+]);
+
 exit;

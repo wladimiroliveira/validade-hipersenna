@@ -101,9 +101,16 @@ formProd.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify(dados)
         });
+        
+        const result = await response.json();
+        console.log("Resposta:", result);
 
-        const text = await response.text();
-        console.log("Resposta bruta:", text);
+        if (result.sucesso) {
+            // Redireciona para outra página, por exemplo, sucesso.html
+            window.location.href = 'success.html';
+        } else {
+            alert(result.mensagem || 'Erro ao enviar dados.');
+        }
 
     } catch (e) {
         console.error('Erro ao interpretar JSON:', e);

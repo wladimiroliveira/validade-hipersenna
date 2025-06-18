@@ -79,3 +79,352 @@ Dados: Array
 
 HTTP Code: 200
 Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[HY093]: Invalid parameter number: parameter was not defined"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[HY093]: Invalid parameter number: parameter was not defined"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"1"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Tiago
+    [matricula] => 4659
+    [filial] => 7
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"2"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Tiago
+    [matricula] => 4659
+    [filial] => 7
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/validade/validade.php
+Dados: Array
+(
+    [0] => Array
+        (
+            [codprod] => 2010
+            [descricao] => QUEIJO MUSSARELA PIRACANJUBA TRANCA KG
+            [validade] => 2025-06-27
+            [quantidade] => 20
+        )
+
+)
+
+HTTP Code: 500
+Resposta: 
+JSON inválido recebido: 
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Tiago
+    [matricula] => 4659
+    [filial] => 7
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Tiago
+    [matricula] => 4659
+    [filial] => 7
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Tiago
+    [matricula] => 4659
+    [filial] => 7
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Tiago
+    [matricula] => 4659
+    [filial] => 7
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":null}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":{"matricula":"4455"}}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":{"id":"1","nome":"Wladimir","matricula":"4455","filial_id":"1"}}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/validade/validade.php
+Dados: Array
+(
+    [itens] => Array
+        (
+            [0] => Array
+                (
+                    [codprod] => 2010
+                    [descricao] => QUEIJO MUSSARELA PIRACANJUBA TRANCA KG
+                    [validade] => 2025-06-30
+                    [quantidade] => 10
+                )
+
+        )
+
+    [colab_id] => 1
+    [filial] => 1
+)
+
+HTTP Code: 400
+Resposta: {"sucesso":false,"mensagem":"Campo 'codprod' \u00e9 obrigat\u00f3rio"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/validade/validade.php
+Dados: Array
+(
+    [itens] => Array
+        (
+            [0] => Array
+                (
+                    [codprod] => 2010
+                    [descricao] => QUEIJO MUSSARELA PIRACANJUBA TRANCA KG
+                    [validade] => 2025-06-30
+                    [quantidade] => 10
+                )
+
+        )
+
+    [colab_id] => 1
+    [filial] => 1
+)
+
+HTTP Code: 400
+Resposta: {"sucesso":false,"mensagem":"Campo 'codprod' \u00e9 obrigat\u00f3rio"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/validade/validade.php
+Dados: Array
+(
+    [itens] => Array
+        (
+            [0] => Array
+                (
+                    [codprod] => 2010
+                    [descricao] => Produto não encontrado
+                    [validade] => 2025-06-27
+                    [quantidade] => 10
+                )
+
+        )
+
+    [colab_id] => 1
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"1"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wladimir
+    [matricula] => 4455
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/validade/validade.php
+Dados: Array
+(
+    [itens] => Array
+        (
+            [0] => Array
+                (
+                    [codprod] => 2010
+                    [descricao] => Produto não encontrado
+                    [validade] => 2025-06-27
+                    [quantidade] => 10
+                )
+
+            [1] => Array
+                (
+                    [codprod] => 8448
+                    [descricao] => POTE SOPRANO HERMETICO CAFE 1600ML
+                    [validade] => 2025-06-30
+                    [quantidade] => 20
+                )
+
+        )
+
+    [colab_id] => 1
+    [filial] => 1
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"2"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/colab/colab.php
+Dados: Array
+(
+    [nome] => Wlad
+    [matricula] => 4454
+    [filial] => 2
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"3"}
+Enviando para: https://hipersenna.com.br/dev_assets/api/validade/validade.php
+Dados: Array
+(
+    [itens] => Array
+        (
+            [0] => Array
+                (
+                    [codprod] => 2010
+                    [descricao] => QUEIJO MUSSARELA PIRACANJUBA TRANCA KG
+                    [validade] => 2025-06-30
+                    [quantidade] => 20
+                )
+
+        )
+
+    [colab_id] => 3
+    [filial] => 2
+)
+
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"3"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"3"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"4"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"3"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"5"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"3"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"6"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"3"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"7"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"3"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"8"}

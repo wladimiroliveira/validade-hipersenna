@@ -1,7 +1,8 @@
 window.dados = {
     'user': {
         'nome': '',
-        'matricula': ''
+        'matricula': '',
+        'filial': ''
     },
     'prod': {
         'itens': []
