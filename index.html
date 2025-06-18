@@ -13,7 +13,7 @@
     <title>Validade</title>
 </head>
 <body>
-<header class="cabeclaho">
+<header class="cabecalho">
     <nav class="navigation">
         <div class="logo">
             <img src="./assets/img/logo-hipersenna.png" alt="Logo do HiperSenna">
@@ -27,30 +27,32 @@
     
     <div class="inserir_validade form_container">
         <form class="form__validade_colab">
-            <div class="mb-3">
-                <label for="nome" class="form-label">Nome completo *</label>
-                <input type="text" class="form-control" id="nome" required>
-                <div class="form-text">Digite seu nome completo.</div>
-            </div>
-            <div class="mb-3 matricula-filial_container">
-                <div class="matricula_container">
-                    <label for="matricula" class="form-label">Matrícula *</label>
-                    <input type="number" class="form-control" id="matricula" required>
-                    <div class="form-text">Esta é a matrícula cadastrada no seu usuário do WinThor.</div>
+            <div class="info_container">
+                <div class="mb-3 nome_container">
+                    <label for="nome" class="form-label">Nome completo *</label>
+                    <input type="text" class="form-control" id="nome" required>
+                    <div class="form-text">Digite seu nome completo.</div>
                 </div>
-                <div class="filial_container">
-                    <label for="filial" class="form-label">Filial *</label>
-                    <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
-                        <option disabled selected>Selecione sua filial</option>
-                        <option value="1">1 - Matriz</option>
-                        <option value="2">2 - Faruk</option>
-                        <option value="3">3 - Carajás</option>
-                        <option value="4">4 - VS10</option>
-                        <option value="5">5 - Xinguara</option>
-                        <option value="6">6 - DP6</option>
-                        <option value="7">7 - Cidade Jardim</option>
-                        <!-- <option value="8">8 - Canaã</option> -->
-                    </select>
+                <div class="mb-3 matricula-filial_container">
+                    <div class="matricula_container">
+                        <label for="matricula" class="form-label">Matrícula *</label>
+                        <input type="number" class="form-control" id="matricula" required>
+                        <div class="form-text">Esta é a matrícula cadastrada no seu usuário do WinThor.</div>
+                    </div>
+                    <div class="filial_container">
+                        <label for="filial" class="form-label">Filial *</label>
+                        <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
+                            <option disabled selected>Selecione sua filial</option>
+                            <option value="1">1 - Matriz</option>
+                            <option value="2">2 - Faruk</option>
+                            <option value="3">3 - Carajás</option>
+                            <option value="4">4 - VS10</option>
+                            <option value="5">5 - Xinguara</option>
+                            <option value="6">6 - DP6</option>
+                            <option value="7">7 - Cidade Jardim</option>
+                            <!-- <option value="8">8 - Canaã</option> -->
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="button_container">

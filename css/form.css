@@ -14,7 +14,7 @@
 
 .form__validade_colab .matricula-filial_container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: 1rem;
     justify-content: space-between;
     gap: 1rem;
@@ -65,6 +65,17 @@
         max-width: 800px;
     }
     
+    .info_container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .form__validade_colab .nome_container {
+        width: 100%;
+    }
+
     .form__validade_prod .line .input_container input {
         width: 20%;
     }
