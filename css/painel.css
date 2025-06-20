@@ -44,17 +44,28 @@
     gap: 1rem;
 }
 
+.button_container .btn_export-csv {
+    display: none;
+}
+
+.button_container .btn_export-csv.ativo {
+    display: unset;
+}
+
 .dias_container #dias {
     width: 70px;
 }
 
 /* Reset básico */
+.table-responsive {
+    margin: 2rem 0 0 0;
+}
+
 .table_validade {
     border-collapse: collapse;
     width: 100%;
     font-family: 'Segoe UI', sans-serif;
     font-size: 14px;
-    margin: 2rem 0 0 0;
 }
 
 /* Cabeçalho da tabela */
