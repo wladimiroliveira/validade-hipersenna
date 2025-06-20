@@ -8,6 +8,9 @@ header("Access-Control-Allow-Methods: POST");
 // Lê o corpo da requisição
 $dados = json_decode(file_get_contents("php://input"), true);
 
+// Token de autenticação
+$token = '59d8e4d941e54db90cf9a5808be9e61c';
+
 // Envia para a API PHP
 $ch = curl_init('http://localhost/validade_hipersenna/api/consultar.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

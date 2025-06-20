@@ -1,87 +1,99 @@
 <?php
+header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
+// Ler input só uma vez
+$rawInput = file_get_contents('php://input');
+$data = json_decode($rawInput, true);
 
-// Coleta e interpreta os dados da requisição
-$input = json_decode(file_get_contents("php://input"), true);
+// Pré-voo CORS
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
 
-// Define consulta e parâmetros
-if (isset($input['paraVencer'])) {
-    $dias = intval($input['paraVencer']);
-    $dataAlvo = date('Y-m-d', strtotime("+$dias days"));
+// Autenticação
+require_once __DIR__.'/../auth/authenticate.php';
+// Conexão com o banco de dados
+require_once __DIR__.'/../db/db.php';
 
-    $sql = "
-        SELECT 
-            validade_produto.cod_produto AS codprod,
-            produtos.descricao,
-            validade_produto.data_validade,
-            SUM(validade_produto.quantidade) AS quantidade,
-            validade_produto.cod_filial AS filial
-        FROM 
-            validade_produto
-        JOIN 
-            produtos ON produtos.id = validade_produto.cod_produto
-        WHERE 
-            validade_produto.data_validade = ?
-        GROUP BY 
-            validade_produto.cod_produto,
-            validade_produto.data_validade,
-            validade_produto.cod_filial
-        ORDER BY 
-            validade_produto.cod_produto,
-            validade_produto.data_validade
-    ";
+try {
+    $pdo = new PDO($dsn, $user, $pass, $options);
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode(['sucesso' => false, 'mensagem' => 'Erro na conexao com o banco de dados']);
+    exit;
+}
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $dataAlvo);
+try {
+    // Receber dados JSON
+    $input = json_decode(file_get_contents("php://input"), true);
 
-} elseif (isset($input['intervaloData'])) {
-    $ini = $input['intervaloData']['dataIni'];
-    $fim = $input['intervaloData']['dataFim'];
+    // Lógica para dias para vencer
+    if (isset($input['paraVencer'])) {
+        $dias = intval($input['paraVencer']);
+        $dataAlvo = date('Y-m-d', strtotime("+$dias days"));
 
-    // Validação simples das datas
-    if (!$ini || !$fim) {
+        $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade = :dataAlvo
+            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+            ORDER BY vp.cod_produto, vp.data_validade
+        ";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':dataAlvo', $dataAlvo);
+
+    } elseif (isset($input['intervaloData'])) {
+        $ini = $input['intervaloData']['dataIni'];
+        $fim = $input['intervaloData']['dataFim'];
+
+        if (!$ini || !$fim) {
+            echo json_encode([]);
+            exit;
+        }
+
+        $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade BETWEEN :ini AND :fim
+            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+            ORDER BY vp.cod_produto, vp.data_validade
+        ";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindValue(':ini', $ini);
+        $stmt->bindValue(':fim', $fim);
+
+    } else {
         echo json_encode([]);
         exit;
     }
 
-    $sql = "
-        SELECT 
-            validade_produto.cod_produto AS codprod,
-            produtos.descricao,
-            validade_produto.data_validade,
-            SUM(validade_produto.quantidade) AS quantidade,
-            validade_produto.cod_filial AS filial
-        FROM 
-            validade_produto
-        JOIN 
-            produtos ON produtos.id = validade_produto.cod_produto
-        WHERE 
-            validade_produto.data_validade BETWEEN ? AND ?
-        GROUP BY 
-            validade_produto.cod_produto,
-            validade_produto.data_validade,
-            validade_produto.cod_filial
-        ORDER BY 
-            validade_produto.cod_produto,
-            validade_produto.data_validade
-    ";
+    // Executar e retornar
+    $stmt->execute();
+    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $ini, $fim);
-
-} else {
-    echo json_encode([]);
-    exit;
+    echo json_encode($resultados);
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode(['sucesso' => false, 'mensagem' => 'Erro na consulta ao banco de dados: ' . $e->getMessage()]);
+} catch (Exception $e) {
+    http_response_code(400);
+    echo json_encode(['sucesso' => false, 'mensagem' => 'Erro: ' . $e->getMessage()]);
 }
-
-// Executa consulta
-$stmt->execute();
-$result = $stmt->get_result();
-
-// Prepara saída
-$saida = [];
-while ($row = $result->fetch_assoc()) {
-    $saida[] = $row;
-}
-
-echo json_encode($saida);
