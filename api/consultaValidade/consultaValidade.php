@@ -36,22 +36,44 @@ try {
         $dias = intval($input['paraVencer']);
         $dataAlvo = date('Y-m-d', strtotime("+$dias days"));
 
-        $sql = "
-        SELECT 
-            vp.cod_produto AS codprod,
-            p.descricao,
-            vp.data_validade,
-            SUM(vp.quantidade) AS quantidade,
-            vp.cod_filial AS filial
-        FROM validade_produto vp
-        JOIN produtos p ON p.id = vp.cod_produto
-        WHERE vp.data_validade = :dataAlvo
-        GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
-        ORDER BY vp.cod_produto, vp.data_validade
-        ";
+        if ($input['filial'] == 'todas'){
+            $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade = :dataAlvo
+            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+            ORDER BY vp.cod_produto, vp.data_validade
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':dataAlvo', $dataAlvo);
+        } else {
+            $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade = :dataAlvo AND vp.cod_filial = :filial
+            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+            ORDER BY vp.cod_produto, vp.data_validade
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':dataAlvo' => $dataAlvo,
+                ':filial' => $input['filial']
+            ]);
+        }
 
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':dataAlvo', $dataAlvo);
+        
 
     } elseif (isset($input['intervaloData'])) {
         $ini = $input['intervaloData']['dataIni'];
@@ -62,23 +84,46 @@ try {
             exit;
         }
 
-        $sql = "
-        SELECT 
-            vp.cod_produto AS codprod,
-            p.descricao,
-            vp.data_validade,
-            SUM(vp.quantidade) AS quantidade,
-            vp.cod_filial AS filial
-        FROM validade_produto vp
-        JOIN produtos p ON p.id = vp.cod_produto
-        WHERE vp.data_validade BETWEEN :ini AND :fim
-        GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
-        ORDER BY vp.cod_produto, vp.data_validade
-        ";
-
-        $stmt = $pdo->prepare($sql);
-        $stmt->bindValue(':ini', $ini);
-        $stmt->bindValue(':fim', $fim);
+        if( $input['filial'] == 'todas') {
+            $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade BETWEEN :ini AND :fim
+            GROUP BY vp.cod_produto, vp.data_validade
+            ORDER BY vp.cod_produto, vp.data_validade
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':ini' => $ini,
+                ':fim' => $fim
+            ]);
+        } else {
+            $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade BETWEEN :ini AND :fim AND vp.cod_filial = :filial
+            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+            ORDER BY vp.cod_produto, vp.data_validade
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':ini' => $ini,
+                ':fim' => $fim,
+                ':filial' => $input['filial']
+            ]);
+        }
 
     } else {
         echo json_encode([]);

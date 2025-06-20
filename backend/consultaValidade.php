@@ -21,7 +21,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Authorization: Bearer ' . $token
 ]);
 
-$response = json_encode(['response' => curl_exec($ch)]);
+$response = curl_exec($ch);
 curl_close($ch);
 
 echo $response;
