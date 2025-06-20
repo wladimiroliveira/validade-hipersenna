@@ -37,17 +37,17 @@ try {
         $dataAlvo = date('Y-m-d', strtotime("+$dias days"));
 
         $sql = "
-            SELECT 
-                vp.cod_produto AS codprod,
-                p.descricao,
-                vp.data_validade,
-                SUM(vp.quantidade) AS quantidade,
-                vp.cod_filial AS filial
-            FROM validade_produto vp
-            JOIN produtos p ON p.id = vp.cod_produto
-            WHERE vp.data_validade = :dataAlvo
-            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
-            ORDER BY vp.cod_produto, vp.data_validade
+        SELECT 
+            vp.cod_produto AS codprod,
+            p.descricao,
+            vp.data_validade,
+            SUM(vp.quantidade) AS quantidade,
+            vp.cod_filial AS filial
+        FROM validade_produto vp
+        JOIN produtos p ON p.id = vp.cod_produto
+        WHERE vp.data_validade = :dataAlvo
+        GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+        ORDER BY vp.cod_produto, vp.data_validade
         ";
 
         $stmt = $pdo->prepare($sql);
@@ -63,17 +63,17 @@ try {
         }
 
         $sql = "
-            SELECT 
-                vp.cod_produto AS codprod,
-                p.descricao,
-                vp.data_validade,
-                SUM(vp.quantidade) AS quantidade,
-                vp.cod_filial AS filial
-            FROM validade_produto vp
-            JOIN produtos p ON p.id = vp.cod_produto
-            WHERE vp.data_validade BETWEEN :ini AND :fim
-            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
-            ORDER BY vp.cod_produto, vp.data_validade
+        SELECT 
+            vp.cod_produto AS codprod,
+            p.descricao,
+            vp.data_validade,
+            SUM(vp.quantidade) AS quantidade,
+            vp.cod_filial AS filial
+        FROM validade_produto vp
+        JOIN produtos p ON p.id = vp.cod_produto
+        WHERE vp.data_validade BETWEEN :ini AND :fim
+        GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+        ORDER BY vp.cod_produto, vp.data_validade
         ";
 
         $stmt = $pdo->prepare($sql);
