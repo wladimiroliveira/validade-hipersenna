@@ -14,10 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// Autenticação
-require_once __DIR__.'/../auth/authenticate.php';
 // Conexão com o banco de dados
-require_once __DIR__.'/../db/db.php';
+require_once __DIR__.'../../db/db.php';
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
@@ -97,12 +95,10 @@ try {
             WHERE vp.data_validade BETWEEN :ini AND :fim
             GROUP BY vp.cod_produto, vp.data_validade
             ORDER BY vp.cod_produto, vp.data_validade
-            ";
+                ";
             $stmt = $pdo->prepare($sql);
-            $stmt->execute([
-                ':ini' => $ini,
-                ':fim' => $fim
-            ]);
+            $stmt->bindValue(':ini', $ini);
+            $stmt->bindValue(':fim', $fim);
         } else {
             $sql = "
             SELECT 

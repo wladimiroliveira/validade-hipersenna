@@ -429,40 +429,944 @@ Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"3"}
 HTTP Code: 200
 Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"8"}
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"1"}
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"7"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"3"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"8"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"4"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"9"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"10"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"5"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"11"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"6"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"12"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"9"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"13"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"11"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"14"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"15"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"16"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
 HTTP Code: 200
 Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"1"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 200
+Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"16"}
 HTTP Code: 200
 Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"2"}
 HTTP Code: 200
-Resposta: [{"itens":[{"codprod":"2010","descricao":"QUEIJO MUSSARELA PIRACANJUBA TRANCA KG","validade":"2025-06-11","quantidade":30},{"codprod":"2020","descricao":"QUEIJO MUSSARELA PIRACANJUBA MINI KG","validade":"2025-06-20","quantidade":35},{"codprod":"8448","descricao":"POTE SOPRANO HERMETICO CAFE 1600ML","validade":"2025-06-20","quantidade":31}],"colab_id":"2","filial":"1"}]
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"2"}
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
 HTTP Code: 200
-Resposta: [{"itens":[{"codprod":"2011","descricao":"QUEIJO MUSSARELA PIRACANJUBA NOZINHO KG","validade":"2025-06-25","quantidade":10},{"codprod":"2012","descricao":"QUEIJO MUSSARELA PIRACANJUBA KG","validade":"2025-06-30","quantidade":36},{"codprod":"2010","descricao":"QUEIJO MUSSARELA PIRACANJUBA TRANCA KG","validade":"2025-06-28","quantidade":56}],"colab_id":"2","filial":"1"}]
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"2"}
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 0
+Resposta: 
+JSON inválido recebido: 
+HTTP Code: 0
+Resposta: 
+JSON inválido recebido: 
+HTTP Code: 0
+Resposta: 
+JSON inválido recebido: 
 HTTP Code: 200
-Resposta: [{"itens":[{"codprod":"2010","descricao":"QUEIJO MUSSARELA PIRACANJUBA TRANCA KG","validade":"2025-06-01","quantidade":1},{"codprod":"2011","descricao":"QUEIJO MUSSARELA PIRACANJUBA NOZINHO KG","validade":"2025-06-24","quantidade":2}],"colab_id":"2","filial":"1"}]
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"2"}
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: [{"itens":[{"codprod":"2010","descricao":"QUEIJO MUSSARELA PIRACANJUBA TRANCA KG","validade":"2025-06-26","quantidade":1},{"codprod":"2011","descricao":"QUEIJO MUSSARELA PIRACANJUBA NOZINHO KG","validade":"2025-06-25","quantidade":12}],"colab_id":"2","filial":"1"}]
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"2"}
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: [{"itens":[{"codprod":"2010","descricao":"QUEIJO MUSSARELA PIRACANJUBA TRANCA KG","validade":"2025-06-30","quantidade":10},{"codprod":"2011","descricao":"QUEIJO MUSSARELA PIRACANJUBA NOZINHO KG","validade":"2025-06-20","quantidade":11}],"colab_id":"2","filial":"1"}]
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"2"}
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"1"}{"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"2"}
-JSON inválido recebido: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"1"}{"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"2"}
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"3"}{"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"4"}{"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"5"}
-JSON inválido recebido: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"3"}{"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"4"}{"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"5"}
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador j\u00e1 cadastrado","id":"1"}
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
 HTTP Code: 200
-Resposta: {"sucesso":true,"mensagem":"Colaborador cadastrado com sucesso","id":"6"}
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:14
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>14</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade/../auth/authenticate.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '4455' for key 'matricula'"}
+HTTP Code: 200
+Resposta: {"sucesso":false,"mensagem":"SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'colaborador_id' cannot be null"}
+HTTP Code: 0
+Resposta: 
+JSON inválido recebido: 
+HTTP Code: 0
+Resposta: 
+JSON inválido recebido: 
+HTTP Code: 0
+Resposta: 
+JSON inválido recebido: 
+HTTP Code: 0
+Resposta: 
+JSON inválido recebido: 
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>17</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:17
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>17</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>17</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:17
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>17</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\colab../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php:18
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\colab\colab.php</b> on line <b>18</b><br />
+
+HTTP Code: 200
+Resposta: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>17</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:17
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>17</b><br />
+
+JSON inválido recebido: <br />
+<b>Warning</b>:  require_once(C:\xampp\htdocs\validade_hipersenna\api\validade../../db/db.php): Failed to open stream: No such file or directory in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>17</b><br />
+<br />
+<b>Fatal error</b>:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\validade_hipersenna\api\validade../../db/db.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php:17
+Stack trace:
+#0 {main}
+  thrown in <b>C:\xampp\htdocs\validade_hipersenna\api\validade\validade.php</b> on line <b>17</b><br />
+

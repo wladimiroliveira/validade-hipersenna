@@ -159,6 +159,7 @@ tr.proximo-vencimento-30   { background-color: #ffe5e5 !important; }
     color: #555;
 }
 
+
 @media screen and (max-width: 768px) {
     .filtro_container {
         flex-direction: column;

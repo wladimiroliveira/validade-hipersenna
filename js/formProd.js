@@ -1,6 +1,6 @@
 // Estrutura inicial: array de objetos para produtos
 let dados = JSON.parse(localStorage.getItem('dados')) || {
-    user: { nome: "", matricula: "" },
+    user: { nome: "", matricula: "", filial: "" },
     prod: { itens: [] }
 };
 
@@ -101,17 +101,16 @@ formProd.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify(dados)
         });
-
-        const result = await response.json();
+        
+        const result = await response.text();
         console.log("Resposta:", result);
-
+        
         if (result.sucesso) {
             // Redireciona para outra página, por exemplo, sucesso.html
-            window.location.href = 'success.html';
+            // window.location.href = 'success.html';
         } else {
             alert(result.mensagem || 'Erro ao enviar dados.');
         }
-
     } catch (e) {
         console.error('Erro ao interpretar JSON:', e);
         alert('Erro inesperado na resposta do servidor.');

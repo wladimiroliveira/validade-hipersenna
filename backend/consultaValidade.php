@@ -12,7 +12,7 @@ $dados = json_decode(file_get_contents("php://input"), true);
 $token = '671d4e4430334ee77d6d36257ac66fb7';
 
 // Envia para a API PHP
-$ch = curl_init('https://hipersenna.com.br/dev_assets/api/consultaValidade/consultaValidade.php');
+$ch = curl_init('http://localhost/validade_hiper/api/consultaValidade/consultaValidade.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dados));

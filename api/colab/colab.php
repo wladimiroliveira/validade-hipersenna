@@ -14,10 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit;
 }
 
-// Autenticação
-require_once __DIR__.'/../auth/authenticate.php';
 // Conexão com o banco de dados
-require_once __DIR__.'/../db/db.php';
+require_once __DIR__.'../../db/db.php';
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
@@ -42,12 +40,12 @@ try {
     }
 
     // Inserção no banco de dados
-    $stmt = $pdo->prepare("SELECT matricula FROM colab WHERE matricula = :matricula");
-    $stmt->execute(['matricula' => $input['matricula']]);
+    $stmt = $pdo->prepare("SELECT * FROM colab WHERE filial_id = :filial and matricula = :matricula");
+    $stmt->execute(['matricula' => $input['matricula'], 'filial' => $input['filial']]);
     $colabExists = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if($colabExists){
-        // Cliente já existe, coleta o ID
+        // Colab já existe, coleta o ID
         http_response_code(200);
         ob_end_clean();
         echo json_encode([
@@ -59,10 +57,11 @@ try {
     }
 
     // Inserir novo colaborador
-    $stmt = $pdo->prepare("INSERT INTO colab (nome, matricula) VALUES (:nome, :matricula)");
+    $stmt = $pdo->prepare("INSERT INTO colab (nome, matricula, filial_id) VALUES (:nome, :matricula, :filial)");
     $stmt->execute([
         'nome' => $input['nome'],
-        'matricula' => $input['matricula']
+        'matricula' => $input['matricula'],
+        'filial' => $input['filial']
     ]);
 
     $novoId = $pdo->lastInsertId();

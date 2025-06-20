@@ -1,4 +1,4 @@
-<?php 
+<?php
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, PUT, DELETE, OPTIONS");
@@ -13,11 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit;
 }
-
-// Autenticação
-require_once __DIR__.'/../auth/authenticate.php';
 // Conexão com o banco de dados
-require_once __DIR__.'/../db/db.php';
+require_once __DIR__.'../../db/db.php';
 
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
@@ -27,49 +24,116 @@ try {
     exit;
 }
 
-// Trata os dados recebidos
-
 try {
-    $input = json_decode($rawInput, true);
-    if($input === null) {
-        throw new Exception('Dados JSON invalidos', 400);
-    }
+    // Receber dados JSON
+    $input = json_decode(file_get_contents("php://input"), true);
 
-    // Campos obrigatórios
-    $requiredFields = ['codprod', 'descricao', 'validade', 'quantidade'];
-    foreach ($input['itens'] as $item) {
-        foreach ($requiredFields as $field) {
-            if (empty($item[$field])) {
-                throw new Exception("Campo '$field' é obrigatório para o produto {$item['codprod']}", 400);
-            }
+    // Lógica para dias para vencer
+    if (isset($input['paraVencer'])) {
+        $dias = intval($input['paraVencer']);
+        $dataAlvo = date('Y-m-d', strtotime("+$dias days"));
+
+        if ($input['filial'] == 'todas'){
+            $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade = :dataAlvo
+            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+            ORDER BY vp.cod_produto, vp.data_validade
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':dataAlvo', $dataAlvo);
+        } else {
+            $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade = :dataAlvo AND vp.cod_filial = :filial
+            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+            ORDER BY vp.cod_produto, vp.data_validade
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':dataAlvo' => $dataAlvo,
+                ':filial' => $input['filial']
+            ]);
         }
+
+        
+
+    } elseif (isset($input['intervaloData'])) {
+        $ini = $input['intervaloData']['dataIni'];
+        $fim = $input['intervaloData']['dataFim'];
+
+        if (!$ini || !$fim) {
+            echo json_encode([]);
+            exit;
+        }
+
+        if( $input['filial'] == 'todas') {
+            $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade BETWEEN :ini AND :fim
+            GROUP BY vp.cod_produto, vp.data_validade
+            ORDER BY vp.cod_produto, vp.data_validade
+                ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindValue(':ini', $ini);
+            $stmt->bindValue(':fim', $fim);
+        } else {
+            $sql = "
+            SELECT 
+                vp.cod_produto AS codprod,
+                p.descricao,
+                vp.data_validade,
+                SUM(vp.quantidade) AS quantidade,
+                vp.cod_filial AS filial
+            FROM validade_produto vp
+            JOIN produtos p ON p.id = vp.cod_produto
+            WHERE vp.data_validade BETWEEN :ini AND :fim AND vp.cod_filial = :filial
+            GROUP BY vp.cod_produto, vp.data_validade, vp.cod_filial
+            ORDER BY vp.cod_produto, vp.data_validade
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([
+                ':ini' => $ini,
+                ':fim' => $fim,
+                ':filial' => $input['filial']
+            ]);
+        }
+
+    } else {
+        echo json_encode([]);
+        exit;
     }
 
-    // Adicionar informações na tabela validade_produto
-    foreach ($input['itens'] as $item) {
-        $stmt = $pdo->prepare("INSERT INTO validade_produto (cod_produto, data_validade, quantidade, cod_filial, colaborador_id) VALUES (:codprod, :validade, :quantidade, :filial, :colab_id)");
-        $stmt->execute([
-            'codprod' => $item['codprod'],
-            'validade' => $item['validade'],
-            'quantidade' => $item['quantidade'],
-            'filial' => $input['filial'],
-            'colab_id' => $input['colab_id']
-        ]);
+    // Executar e retornar
+    $stmt->execute();
+    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $novoId = $pdo->lastInsertId();
-
-        http_response_code(200);
-        ob_end_clean();
-        echo json_encode([
-            'sucesso' => true,
-            'mensagem' => 'Colaborador cadastrado com sucesso',
-            'id' => $novoId
-        ]);
-    }
-    exit;
+    echo json_encode($resultados);
+} catch (PDOException $e) {
+    http_response_code(500);
+    echo json_encode(['sucesso' => false, 'mensagem' => 'Erro na consulta ao banco de dados: ' . $e->getMessage()]);
 } catch (Exception $e) {
-    http_response_code($e->getCode() ?: 500);
-    ob_end_clean();
-    echo json_encode(['sucesso' => false, 'mensagem' => $e->getMessage()]);
-    exit;
+    http_response_code(400);
+    echo json_encode(['sucesso' => false, 'mensagem' => 'Erro: ' . $e->getMessage()]);
 }
