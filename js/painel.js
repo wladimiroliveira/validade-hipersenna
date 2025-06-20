@@ -47,7 +47,7 @@ function receberDados(control, container) {
 // Envia os dados para o backend PHP
 async function enviarDados(payload) {
     try {
-        const response = await fetch('http://hipersenna.com.br/validade/backend/consultaValidade.php', {
+        const response = await fetch('http://localhost/validade_hipersenna/backend/consultaValidade.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
