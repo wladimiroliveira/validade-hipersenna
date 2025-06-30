@@ -158,31 +158,3 @@ tr.proximo-vencimento-30   { background-color: #ffe5e5 !important; }
     font-size: 15px;
     color: #555;
 }
-
-
-@media screen and (max-width: 768px) {
-    .filtro_container {
-        flex-direction: column;
-    }
-
-    .select_container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .info_container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .dias_container input {
-        width: 100%;
-        max-width: 70px;
-    }
-
-    .button_container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-}
