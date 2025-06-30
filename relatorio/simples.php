@@ -12,7 +12,7 @@ session_set_cookie_params([
 
 // Verifica se o usuário está logado.
 if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    header('Location: ../login.php');
+    header('Location: https://hipersenna.com.br/login.php');
     exit();
 }
 
@@ -24,7 +24,7 @@ if (isset($_SESSION['ultimo_acesso']) && (time() - $_SESSION['ultimo_acesso'] > 
     // Sessão expirou
     session_unset();   // Limpa as variáveis de sessão
     session_destroy(); // Destrói a sessão
-    header('Location: ../login.php'); // Redireciona para a página de login
+    header('Location: https://hipersenna.com.br/login.php'); // Redireciona para a página de login
     exit;
 }
 
