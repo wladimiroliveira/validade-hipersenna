@@ -1,68 +1,3 @@
-<?php
-// Iniciar a sessão
-session_start();
-
-// Configurações iniciais para os cookies de sessão
-session_set_cookie_params([
-    'lifetime' => 1800,
-    'secure' => true,   // True se estiver usando HTTPS
-    'httponly' => true, // Impede o acesso ao cookie via JavaScript
-    'samesite' => 'Strict' // Limita o envio de cookies a solicitações do mesmo site
-]);
-
-// Verifica se o usuário está logado.
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    header('Location: https://hipersenna.com.br/login.php');
-    exit();
-}
-
-// Define o tempo máximo de inatividade permitido (ex: 30 minutos)
-$max_inatividade = 1800;  // em segundos
-
-// Verifica se a variável de sessão foi definida
-if (isset($_SESSION['ultimo_acesso']) && (time() - $_SESSION['ultimo_acesso'] > $max_inatividade)) {
-    // Sessão expirou
-    session_unset();   // Limpa as variáveis de sessão
-    session_destroy(); // Destrói a sessão
-    header('Location: https://hipersenna.com.br/login.php'); // Redireciona para a página de login
-    exit;
-}
-
-// Regenera ID da sessão para prevenir ataques de fixação de sessão
-session_regenerate_id(true);
-
-// Atualiza o tempo de último acesso na sessão
-$_SESSION['ultimo_acesso'] = time();
-
-// Verifica se o usuário tem permissão para acessar
-$permissoesPermitidas = ['a', 'u', 'e'];
-
-if (!isset($_SESSION['user_permissao']) || !in_array($_SESSION['user_permissao'], $permissoesPermitidas)) {
-    header('Location: ../home.php');
-    exit();
-}
-
-// Inclui o arquivo de configuração
-include('../config/config.php');
-include('../config/navbar.php');
-
-// --- Recupera Dados do Usuário da Sessão ---
-// Usa o operador de coalescência nula (??) para fornecer um valor padrão se a variável de sessão não estiver definida
-$user_filial = $_SESSION['user_filial'] ?? '';
-$user_name = $_SESSION['nome_usuario'] ?? '';
-
-// Converte a matrícula para inteiro, se existir, ou define como null
-$matricula = isset($_SESSION['matricula']) ? (int) $_SESSION['matricula'] : null;
-
-// Define a data atual no formato 'dia-Mês-Ano'
-$data_lancamento = date('d-M-Y', strtotime('today'));
-
-// --- Verificação de Matrícula (Opcional, mas recomendado para dados críticos) ---
-// Interrompe a execução do script e exibe um erro se a matrícula for inválida
-if ($matricula === null) {
-    die("Erro: Matrícula do usuário não encontrada ou inválida.");
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -89,14 +24,15 @@ if ($matricula === null) {
 </head>
 <body>
 <header class="cabecalho">
-    <nav class="navigation">
+    <?php include_once('../config/navbar.php')?>
+    <!-- <nav class="navigation">
         <div class="logo">
             <img src="./assets/img/logo-hipersenna.png" alt="Logo do HiperSenna">
         </div>
         <div class="user-info" style="margin-left: auto; padding-right: 20px; color: white;">
             Olá, <strong><?= htmlspecialchars($user_name) ?></strong> (Matrícula: <?= htmlspecialchars($matricula) ?>) - Filial: <strong><?= htmlspecialchars($user_filial) ?></strong>
         </div>
-    </nav>
+    </nav> -->
 </header>
 <main class="conteudo">
 <div class="dados_container">
