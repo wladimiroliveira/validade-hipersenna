@@ -11,8 +11,10 @@ $dados = json_decode(file_get_contents("php://input"), true);
 // Token de autenticação
 $token = '671d4e4430334ee77d6d36257ac66fb7';
 
+// $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/workspace/vencimento/relatorio/hub.php';
+
 // Envia para a API PHP
-$ch = curl_init('https://hipersenna.com.br/dev_assets/api/consultaValidade/consultaValidade.php');
+$ch = curl_init($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/dev_assets/api/consultaValidade/consultaValidade.php');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($dados));
@@ -23,5 +25,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 
 $response = curl_exec($ch);
 curl_close($ch);
+
+file_put_contents('api_debug.log', "Resposta: $response\n", FILE_APPEND);
 
 echo $response;

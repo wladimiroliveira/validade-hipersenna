@@ -1,9 +1,14 @@
-const filtroControl = document.getElementById('selectControl');
-const infoContainer = document.getElementById('infoContainer');
-const resultContainer = document.getElementById('resultContainer');
-const botaoConsultar = document.getElementById('botaoConsultar');
-const csvContainer = document.getElementById('csvContainer');
-const botaoExportarCSV = document.getElementById('botaoExportarCSV');
+const elementosConsulta = {
+    filtro: document.getElementById('selectControl'),
+    info: document.getElementById('infoContinaer'),
+    result: document.getElementById('resultContainer'),
+    botao: document.getElementById('botaoConsultar')
+};
+
+const elementosCsv = {
+    container: document.getElementById('csvContainer'),
+    botao: document.getElementById('botaoExportarCSV')
+};
 
 
 // Objeto base
@@ -42,12 +47,14 @@ function receberDados(control, container) {
 
     // Limpa os resultados ao trocar o filtro
     resultContainer.innerHTML = '';
+    elementosCsv['botao'].classList.remove('ativo')
+
 }
 
 // Envia os dados para o backend PHP
 async function enviarDados(payload) {
     try {
-        const response = await fetch('http://hipersenna.com.br/validade/backend/consultaValidade.php', {
+        const response = await fetch('../backend/consultaValidade.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -79,17 +86,6 @@ function diasParaVencer(dataValidadeStr) {
     return Math.ceil(diff);
 }
 
-function gerarCorProximidade(diasRestantes) {
-    const maxDias = 30;
-    const fator = Math.max(0, Math.min(1, 1 - (diasRestantes / maxDias)));
-
-    const vermelho = 255;
-    const verde = Math.floor(229 + (255 - 229) * (1 - fator));
-    const azul = Math.floor(229 + (255 - 229) * (1 - fator));
-
-    return `rgb(${vermelho}, ${verde}, ${azul})`;
-}
-
 function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xlsx') {
     const tabela = document.getElementById(tabelaId);
     if (!tabela) return;
@@ -109,9 +105,6 @@ function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xls
     XLSX.utils.book_append_sheet(wb, ws, 'Vencimentos');
     XLSX.writeFile(wb, nomeArquivo);
 }
-
-
-
 
 function montarTabelaDiasAVencer(tabela, container) {
     if (!tabela.length) {
@@ -219,21 +212,21 @@ async function consultar(control) {
     const tabela = await enviarDados(payload);
     montarTabelaDiasAVencer(tabela, resultContainer);
 
-    if (tabela.length > 0 && botaoExportarCSV) {
-    botaoExportarCSV.classList.add('ativo');
+    if (tabela.length > 0 && elementosCsv['botao']) {
+    elementosCsv['botao'].classList.add('ativo');
 }
 }
 
 
 // Eventos
-filtroControl.addEventListener('change', () => {
-    receberDados(filtroControl, infoContainer);
+elementosConsulta['filtro'].addEventListener('change', () => {
+    receberDados(elementosConsulta['filtro'], infoContainer);
 });
 
-botaoConsultar.addEventListener('click', () => {
-    consultar(filtroControl);
+elementosConsulta['botao'].addEventListener('click', () => {
+    consultar(elementosConsulta['filtro']);
 });
 
-botaoExportarCSV.addEventListener('click', () => {
+elementosCsv['botao'].addEventListener('click', () => {
     exportarTabela();
 });
