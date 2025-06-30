@@ -127,7 +127,6 @@ function montarTabelaDiasAVencer(tabela, container) {
         if (diasRestantes < 0) {
             classeLinha = 'vencido';
         } else if (diasRestantes <= 30) {
-            // Agrupa em faixas de 5 dias: 0–5, 6–10, etc.
             const faixa = Math.ceil(diasRestantes / 5) * 5;
             classeLinha = `proximo-vencimento-${faixa}`;
         }
@@ -139,6 +138,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                 <td>${item.data_validade}</td>
                 <td>${item.quantidade}</td>
                 <td>${item.filial}</td>
+                <td>${diasRestantes < 0 ? 'Vencido' : diasRestantes + ' dia(s)'}</td>
             </tr>
         `;
     }
@@ -153,6 +153,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                         <th scope="col">Dt. Validade</th>
                         <th scope="col">Quantidade</th>
                         <th scope="col">Filial</th>
+                        <th scope="col">Dias Restantes</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -173,6 +174,7 @@ function montarTabelaDiasAVencer(tabela, container) {
         </div>
     `;
 }
+
 
 // Ação de consulta com base no filtro
 async function consultar(control) {

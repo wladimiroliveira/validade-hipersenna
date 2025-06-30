@@ -18,6 +18,11 @@
 
 body {
     position: relative;
-    padding: 2rem;
     overflow-x: hidden;
+}
+
+.button_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

@@ -2,7 +2,7 @@ window.dados = {
     'user': {
         'nome': '',
         'matricula': '',
-        'filial': ''
+        'filial': parseInt('')
     },
     'prod': {
         'itens': []
