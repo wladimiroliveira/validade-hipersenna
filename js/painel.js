@@ -99,6 +99,16 @@ function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xls
         { wch: 40 },
         { wch: 15 },
         { wch: 12 },
+        { wch: 10 },
+        { wch: 10 },
+        { wch: 10 },
+        { wch: 10 },
+        { wch: 10 },
+        { wch: 10 },
+        { wch: 10 },
+        { wch: 10 },
+        { wch: 10 },
+        { wch: 10 },
         { wch: 10 }
     ];
 
@@ -117,7 +127,7 @@ function montarTabelaDiasAVencer(tabela, container) {
         const diasRestantes = diasParaVencer(item.data_validade);
         let classeLinha = '';
 
-        if (diasRestantes < 0) {
+        if (diasRestantes <= 0) {
             classeLinha = 'vencido';
         } else if (diasRestantes <= 30) {
             const faixa = Math.ceil(diasRestantes / 5) * 5;
@@ -126,12 +136,21 @@ function montarTabelaDiasAVencer(tabela, container) {
 
         linhas += `
             <tr class="${classeLinha}">
-                <th scope="row">${item.codprod}</th>
-                <td>${item.descricao}</td>
+                <td scope="row">${item.filial}</td>
+                <td>${item.codprod}</td>
+                <td>${item.desc}</td>
+                <td>${item.dp}</td>
+                <td>${item.quant}</td>
+                <td>${item.codfornec}</td>
+                <td>${item.codcomp}</td>
                 <td>${item.data_validade}</td>
-                <td>${item.quantidade}</td>
-                <td>${item.filial}</td>
-                <td>${diasRestantes < 0 ? 'Vencido' : diasRestantes + ' dia(s)'}</td>
+                <td>${item.dias_restantes} dia(s)</td>
+                <td>${item.g1}</td>
+                <td>${item.g2}</td>
+                <td>${item.g3}</td>
+                <td>${item.g4}</td>
+                <td>${item.g5}</td>
+                <td>${item.g7}</td>
             </tr>
         `;
     }
@@ -141,12 +160,21 @@ function montarTabelaDiasAVencer(tabela, container) {
             <table class="table_validade" id="resultTable">
                 <thead>
                     <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Dt. Validade</th>
-                        <th scope="col">Quantidade</th>
-                        <th scope="col">Filial</th>
-                        <th scope="col">Dias Restantes</th>
+                        <th scope="col">FILIAL</th>
+                        <th scope="col">CODPROD</th>
+                        <th scope="col">DESCRIÇÃO</th>
+                        <th scope="col">DEPARTAMENTO</th>
+                        <th scope="col">QUANTIDADE</th>
+                        <th scope="col">CODFORNEC</th>
+                        <th scope="col">CODCOMPRADOR</th>
+                        <th scope="col">DATA DE VALIDADE</th>
+                        <th scope="col">DIAS RESTANTES</th>
+                        <th scope="col">GIRO F1</th>
+                        <th scope="col">GIRO F2</th>
+                        <th scope="col">GIRO F3</th>
+                        <th scope="col">GIRO F4</th>
+                        <th scope="col">GIRO F5</th>
+                        <th scope="col">GIRO F7</th>
                     </tr>
                 </thead>
                 <tbody>

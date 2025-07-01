@@ -2,3 +2,35 @@
     width: 70%;
     margin: 4rem auto;
 }
+
+.table__validade_container {
+    border: 5px solid #4A5A6A;
+    max-height: 400px; /* ajuste conforme necessário */
+    overflow-y: auto;
+    overflow-x: auto; /* se quiser impedir scroll horizontal */
+}
+
+.table_validade thead th {
+    position: sticky;
+    top: 0;
+    background-color: #4A5A6A; /* ou cor da sua tabela */
+    color: #F4F6F8;
+    z-index: 1;
+}
+
+.table_validade th, tr {
+    text-wrap-mode: nowrap;
+    font-weight: 600;
+}
+
+.table_validade th, .table_validade td {
+    border: 1px solid black;
+}
+
+.table_validade tr {
+    transition: box-shadow .2s ease-in-out;
+    &:hover {
+        cursor: default;
+        box-shadow: inset 1px 1px 10px #0000005e;
+    }
+}
