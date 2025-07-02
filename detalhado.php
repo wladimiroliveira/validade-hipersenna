@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/painel.css">
     <link rel="stylesheet" href="./css/relatorios/tabela.css">
+    <link rel="stylesheet" href="./css/relatorios/loading.css">
     <link rel="shortcut icon" href="./assets/img/icon/logo-icone.ico" type="image/x-icon">
     <title>Painel Vencimento</title>
 </head>
@@ -16,6 +17,10 @@
     <?php include_once('../config/navbar.php')?>
 </header>
 <main class="conteudo">
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
     <section class="intro_container">
         <h1 class="m-4">Relatório detalhado</h1>
         <p>Realize a consulta dos dados necessários abaixo.</p>

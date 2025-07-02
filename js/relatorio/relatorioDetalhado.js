@@ -51,6 +51,14 @@ function diasParaVencer(dataValidadeStr) {
     return Math.ceil(diff);
 }
 
+function mostrarLoading() {
+    document.getElementById('loadingOverlay').classList.remove('hidden');
+}
+
+function esconderLoading() {
+    document.getElementById('loadingOverlay').classList.add('hidden');
+}
+
 function montarTabelaDiasAVencer(tabela, container) {
     if (!tabela.length) {
         container.innerHTML = '<p class="text-muted">Nenhum resultado encontrado.</p>';
@@ -86,8 +94,8 @@ function montarTabelaDiasAVencer(tabela, container) {
                 <td>${item.g4}</td>
                 <td>${item.g5}</td>
                 <td>${item.g7}</td>
-                <td class="tratativa-cell">${item.tratativa}</td>
-                <td class="status-cell">${item.status}</td>
+                <td class="tratativa-cell" data-valor="${item.idxtratativa}">${item.tratativa}</td>
+                <td class="status-cell" data-valor="${item.idxstatus}">${item.status}</td>
             </tr>
         `;
     }
@@ -136,19 +144,21 @@ function montarTabelaDiasAVencer(tabela, container) {
 
     // Adicione o evento de click para as células de tratativa
     container.querySelectorAll('.tratativa-cell').forEach(cell => {
-        cell.addEventListener('click', function (e) {
-            if (cell.querySelector('select')) return; // já está editando
+        cell.addEventListener('click', function () {
+            if (cell.querySelector('select')) return;
 
-            const valorAtual = cell.textContent.trim();
+            const valorAtual = cell.getAttribute('data-valor');
             const select = document.createElement('select');
+
             opcoesTratativa.forEach((opcao, idx) => {
                 const opt = document.createElement('option');
-                opt.value = idx +1; // valor numérico sequencial
-                opt.textContent = opcao; // texto visível é a string da opção
-                if (opcao === valorAtual) opt.selected = true;
+                opt.value = idx + 1;
+                opt.textContent = opcao;
+                if (String(opt.value) === valorAtual) opt.selected = true;
                 select.appendChild(opt);
             });
 
+            const textoOriginal = cell.textContent;
             cell.textContent = '';
             cell.appendChild(select);
             select.focus();
@@ -158,46 +168,60 @@ function montarTabelaDiasAVencer(tabela, container) {
                 const novoTexto = select.options[select.selectedIndex].text;
                 const tr = cell.closest('tr');
                 const id = tr.getAttribute('id');
+
                 cell.textContent = novoTexto;
+                cell.setAttribute('data-valor', novoValor);
 
-                // Envie para o backend
-                const response = await fetch('./backend/editarValidade.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        id: id,
-                        coluna: 'tratativa',
-                        valor: novoValor
-                    })
-                });
-                const result = await response.json();
-                console.log(result);
+                mostrarLoading(); // <- mostra loading
 
+                try {
+                    const response = await fetch('./backend/editarValidade.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            id: id,
+                            coluna: 'tratativa',
+                            valor: novoValor
+                        })
+                    });
+                    const result = await response.json();
+                    console.log(result);
+                } catch (e) {
+                    console.error('Erro ao salvar tratativa:', e);
+                    alert('Erro ao salvar alteração. Tente novamente.');
+                } finally {
+                    esconderLoading(); // <- esconde loading
+                }
             });
 
-            // Se perder o foco, volta ao valor atual
             select.addEventListener('blur', function () {
                 if (cell.contains(select)) {
                     const textoSelecionado = select.options[select.selectedIndex].text;
+                    const valorSelecionado = select.value;
                     cell.textContent = textoSelecionado;
+                    cell.setAttribute('data-valor', valorSelecionado);
                 }
             });
         });
     });
-    container.querySelectorAll('.status-cell').forEach(cell => {
-        cell.addEventListener('click', function (e) {
-            if (cell.querySelector('select')) return; // já está editando
 
-            const valorAtual = cell.textContent.trim();
+
+    container.querySelectorAll('.status-cell').forEach(cell => {
+        cell.addEventListener('click', function () {
+            if (cell.querySelector('select')) return;
+
+            const valorAtual = cell.getAttribute('data-valor');
             const select = document.createElement('select');
+
             opcoesStatus.forEach((opcao, idx) => {
                 const opt = document.createElement('option');
-                opt.value = idx+1; // valor numérico sequencial
-                opt.textContent = opcao; // texto visível é a string da opção
-                if (opcao === valorAtual) opt.selected = true;
+                opt.value = idx + 1;
+                opt.textContent = opcao;
+                if (String(opt.value) === valorAtual) opt.selected = true;
                 select.appendChild(opt);
             });
 
+            const textoOriginal = cell.textContent;
             cell.textContent = '';
             cell.appendChild(select);
             select.focus();
@@ -207,28 +231,38 @@ function montarTabelaDiasAVencer(tabela, container) {
                 const novoTexto = select.options[select.selectedIndex].text;
                 const tr = cell.closest('tr');
                 const id = tr.getAttribute('id');
+
                 cell.textContent = novoTexto;
+                cell.setAttribute('data-valor', novoValor);
 
-                // Envie para o backend
-                const response = await fetch('./backend/editarValidade.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        id: id,
-                        coluna: 'status',
-                        valor: novoValor
-                    })
-                });
-                const result = await response.json();
-                console.log(result);
+                mostrarLoading(); // <- mostra loading
 
+                try {
+                    const response = await fetch('./backend/editarValidade.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            id: id,
+                            coluna: 'status',
+                            valor: novoValor
+                        })
+                    });
+                    const result = await response.json();
+                    console.log(result);
+                } catch (e) {
+                    console.error('Erro ao salvar status:', e);
+                    alert('Erro ao salvar alteração. Tente novamente.');
+                } finally {
+                    esconderLoading(); // <- esconde loading
+                }
             });
 
-            // Se perder o foco, volta ao valor atual
             select.addEventListener('blur', function () {
                 if (cell.contains(select)) {
                     const textoSelecionado = select.options[select.selectedIndex].text;
+                    const valorSelecionado = select.value;
                     cell.textContent = textoSelecionado;
+                    cell.setAttribute('data-valor', valorSelecionado);
                 }
             });
         });
