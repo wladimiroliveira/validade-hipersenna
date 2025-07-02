@@ -161,7 +161,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                 cell.textContent = novoTexto;
 
                 // Envie para o backend
-                const response = await fetch('../backend/editarValidade.php', {
+                const response = await fetch('./backend/editarValidade.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -210,7 +210,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                 cell.textContent = novoTexto;
 
                 // Envie para o backend
-                const response = await fetch('../backend/editarValidade.php', {
+                const response = await fetch('./backend/editarValidade.php', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

@@ -68,17 +68,17 @@ if ($matricula === null) {
 <head>
     <link rel="stylesheet" href="/css/reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <link rel="shortcut icon" href="../assets/img/icon/logo-icone.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/icon/logo-icone.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/painel.css">
-    <link rel="stylesheet" href="../css/relatorios/hub.css">
+    <link rel="stylesheet" href="./css/relatorios/hub.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vencimento</title>
 </head>
 <body>
 <header class="cabecalho">
-    <?php include_once('../../config/navbar.php')?>
+    <?php include_once('../config/navbar.php')?>
 </header>
 <main class="conteudo">
 <section class="intro">
