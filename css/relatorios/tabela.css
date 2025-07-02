@@ -1,11 +1,11 @@
 .result_container {
-    width: 70%;
+    width: 95%;
     margin: 4rem auto;
 }
 
 .table__validade_container {
     border: 5px solid #4A5A6A;
-    max-height: 400px; /* ajuste conforme necessário */
+    max-height: 600px; /* ajuste conforme necessário */
     overflow-y: auto;
     overflow-x: auto; /* se quiser impedir scroll horizontal */
 }
@@ -36,4 +36,31 @@
     &:active {
         box-shadow: unset;
     }
+}
+
+.resizable-container {
+    resize: horizontal;
+    overflow: auto;
+    min-width: 400px;
+    max-width: 100%;
+    width: 80%; /* ou outro valor inicial */
+    
+    margin: 0 auto; /* <== centraliza horizontalmente */
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+.resizer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    cursor: col-resize;
+    user-select: none;
+    z-index: 1;
+}
+
+th {
+    position: relative;
 }

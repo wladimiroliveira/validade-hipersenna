@@ -14,6 +14,39 @@ const opcoesStatus = [
     "Concluído"
 ];
 
+/* Função para largura dinâmica na tabela */
+function tornarColunasRedimensionaveis(tabelaId) {
+    const table = document.getElementById(tabelaId);
+    const ths = table.querySelectorAll("th");
+
+    ths.forEach(th => {
+        const resizer = document.createElement("div");
+        resizer.classList.add("resizer");
+        th.appendChild(resizer);
+
+        resizer.addEventListener("mousedown", mousedown);
+
+        function mousedown(e) {
+            const startX = e.pageX;
+            const startWidth = th.offsetWidth;
+
+            function mousemove(e) {
+                const novaLargura = startWidth + (e.pageX - startX);
+                th.style.width = novaLargura + "px";
+            }
+
+            function mouseup() {
+                document.removeEventListener("mousemove", mousemove);
+                document.removeEventListener("mouseup", mouseup);
+            }
+
+            document.addEventListener("mousemove", mousemove);
+            document.addEventListener("mouseup", mouseup);
+        }
+    });
+}
+
+
 function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xlsx') {
     const tabela = document.getElementById(tabelaId);
     if (!tabela) return;
@@ -101,44 +134,46 @@ function montarTabelaDiasAVencer(tabela, container) {
     }
 
     container.innerHTML = `
-        <div class="table-responsive mb-3 table__validade_container">
-            <table class="table_validade" id="resultTable">
-                <thead>
-                    <tr>
-                        <th scope="col">FILIAL</th>
-                        <th scope="col">CODPROD</th>
-                        <th scope="col">DESCRIÇÃO</th>
-                        <th scope="col">DEPARTAMENTO</th>
-                        <th scope="col">QUANTIDADE</th>
-                        <th scope="col">CODFORNEC</th>
-                        <th scope="col">CODCOMPRADOR</th>
-                        <th scope="col">DATA DE VALIDADE</th>
-                        <th scope="col">DIAS RESTANTES</th>
-                        <th scope="col">GIRO F1</th>
-                        <th scope="col">GIRO F2</th>
-                        <th scope="col">GIRO F3</th>
-                        <th scope="col">GIRO F4</th>
-                        <th scope="col">GIRO F5</th>
-                        <th scope="col">GIRO F7</th>
-                        <th scope="col">TRATATIVA</th>
-                        <th scope="col">STATUS</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${linhas}
-                </tbody>
-            </table>
-        </div>
+        <div class="resizable-container">
+            <div class="table-responsive mb-3 table__validade_container">
+                <table class="table_validade" id="resultTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">FILIAL</th>
+                            <th scope="col">CODPROD</th>
+                            <th scope="col">DESCRIÇÃO</th>
+                            <th scope="col">DEPARTAMENTO</th>
+                            <th scope="col">QUANTIDADE</th>
+                            <th scope="col">CODFORNEC</th>
+                            <th scope="col">CODCOMPRADOR</th>
+                            <th scope="col">DATA DE VALIDADE</th>
+                            <th scope="col">DIAS RESTANTES</th>
+                            <th scope="col">GIRO F1</th>
+                            <th scope="col">GIRO F2</th>
+                            <th scope="col">GIRO F3</th>
+                            <th scope="col">GIRO F4</th>
+                            <th scope="col">GIRO F5</th>
+                            <th scope="col">GIRO F7</th>
+                            <th scope="col">TRATATIVA</th>
+                            <th scope="col">STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${linhas}
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="legenda">
-            <p><strong>Legenda:</strong></p>
-            <ul>
-                <li><span class="cor-swatch vencido"></span> Produto vencido</li>
-                <li><span class="cor-swatch proximo-vencimento-5"></span> Vence em até 5 dias</li>
-                <li><span class="cor-swatch proximo-vencimento-10"></span> Vence em até 10 dias</li>
-                <li><span class="cor-swatch proximo-vencimento-15"></span> Vence em até 15 dias</li>
-                <li><span class="cor-swatch proximo-vencimento-30"></span> Vence em até 30 dias</li>
-            </ul>
+            <div class="legenda">
+                <p><strong>Legenda:</strong></p>
+                <ul>
+                    <li><span class="cor-swatch vencido"></span> Produto vencido</li>
+                    <li><span class="cor-swatch proximo-vencimento-5"></span> Vence em até 5 dias</li>
+                    <li><span class="cor-swatch proximo-vencimento-10"></span> Vence em até 10 dias</li>
+                    <li><span class="cor-swatch proximo-vencimento-15"></span> Vence em até 15 dias</li>
+                    <li><span class="cor-swatch proximo-vencimento-30"></span> Vence em até 30 dias</li>
+                </ul>
+            </div>
         </div>
     `;
 
@@ -311,6 +346,7 @@ async function consultar(control) {
 
     const tabela = await enviarDados(payload);
     montarTabelaDiasAVencer(tabela, resultContainer);
+    tornarColunasRedimensionaveis("resultTable");
 
     if (tabela.length > 0 && elementosCsv['botao']) {
         elementosCsv['botao'].classList.add('ativo');
