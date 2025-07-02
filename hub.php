@@ -88,7 +88,7 @@ if ($matricula === null) {
     <div class="card_container">
         <a href="./simples.php" style="text-decoration: none;">
             <div class="card" style="width: 18rem;">
-                <img src="../assets/img/Relatório Simples com Gráfico de Barras.png" class="card-img-top" alt="Relatório simples">
+                <img src="./assets/img/Relatório Simples com Gráfico de Barras.png" class="card-img-top" alt="Relatório simples">
                 <div class="card-body">
                     <p class="card-text"><strong>Relatório simples</strong>. Utilize este relatório quando estiver precisando apenas visualizar os registros.</p>
                 </div>
@@ -96,7 +96,7 @@ if ($matricula === null) {
         </a>
         <a href="./detalhado.php" style="text-decoration: none;">
             <div class="card" style="width: 18rem;">
-                <img src="../assets/img/ChatGPT Image 30 de jun. de 2025, 11_21_03.png" class="card-img-top" alt="Relatório detalhado">
+                <img src="./assets/img/ChatGPT Image 30 de jun. de 2025, 11_21_03.png" class="card-img-top" alt="Relatório detalhado">
                 <div class="card-body">
                     <p class="card-text"><strong>Relatório detalhado</strong>. Utilize este relatório quando quiser realizar consultas detalhadas e delegar vistorias.</p>
                 </div>
