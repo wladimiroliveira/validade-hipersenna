@@ -151,7 +151,7 @@ if ($matricula === null) {
                 </table>
             </div>
             <div class="button_container">
-                <a href="../index.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
+                <a href="../home.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
                 <button type="submit" class="btn btn-primary" id="next">Enviar</button>
             </div>
         </form>
