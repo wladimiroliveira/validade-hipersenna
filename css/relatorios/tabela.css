@@ -30,7 +30,10 @@
 .table_validade tr {
     transition: box-shadow .2s ease-in-out;
     &:hover {
-        cursor: default;
+        cursor: pointer;
         box-shadow: inset 1px 1px 10px #0000005e;
+    }
+    &:active {
+        box-shadow: unset;
     }
 }

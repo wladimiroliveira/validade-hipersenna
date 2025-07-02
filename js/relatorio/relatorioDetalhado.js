@@ -1,3 +1,19 @@
+// Opções de tratativas
+const opcoesTratativa = [
+    "---",
+    "Colocar em promoção",
+    "⁠Troca com Fornecedor",
+    "⁠Transferência Interna",
+    "⁠Bloqueio para Venda",
+    "⁠Doação"
+];
+
+const opcoesStatus = [
+    "---",
+    "Em andamento",
+    "Concluído"
+];
+
 function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xlsx') {
     const tabela = document.getElementById(tabelaId);
     if (!tabela) return;
@@ -54,7 +70,7 @@ function montarTabelaDiasAVencer(tabela, container) {
         }
 
         linhas += `
-            <tr class="${classeLinha}">
+            <tr class="${classeLinha}" id="${item.id}">
                 <td scope="row">${item.filial}</td>
                 <td>${item.codprod}</td>
                 <td>${item.desc}</td>
@@ -70,6 +86,8 @@ function montarTabelaDiasAVencer(tabela, container) {
                 <td>${item.g4}</td>
                 <td>${item.g5}</td>
                 <td>${item.g7}</td>
+                <td class="tratativa-cell">${item.tratativa}</td>
+                <td class="status-cell">${item.status}</td>
             </tr>
         `;
     }
@@ -94,6 +112,8 @@ function montarTabelaDiasAVencer(tabela, container) {
                         <th scope="col">GIRO F4</th>
                         <th scope="col">GIRO F5</th>
                         <th scope="col">GIRO F7</th>
+                        <th scope="col">TRATATIVA</th>
+                        <th scope="col">STATUS</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,6 +133,106 @@ function montarTabelaDiasAVencer(tabela, container) {
             </ul>
         </div>
     `;
+
+    // Adicione o evento de click para as células de tratativa
+    container.querySelectorAll('.tratativa-cell').forEach(cell => {
+        cell.addEventListener('click', function (e) {
+            if (cell.querySelector('select')) return; // já está editando
+
+            const valorAtual = cell.textContent.trim();
+            const select = document.createElement('select');
+            opcoesTratativa.forEach((opcao, idx) => {
+                const opt = document.createElement('option');
+                opt.value = idx +1; // valor numérico sequencial
+                opt.textContent = opcao; // texto visível é a string da opção
+                if (opcao === valorAtual) opt.selected = true;
+                select.appendChild(opt);
+            });
+
+            cell.textContent = '';
+            cell.appendChild(select);
+            select.focus();
+
+            select.addEventListener('change', async function () {
+                const novoValor = select.value;
+                const novoTexto = select.options[select.selectedIndex].text;
+                const tr = cell.closest('tr');
+                const id = tr.getAttribute('id');
+                cell.textContent = novoTexto;
+
+                // Envie para o backend
+                const response = await fetch('../backend/editarValidade.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        id: id,
+                        coluna: 'tratativa',
+                        valor: novoValor
+                    })
+                });
+                const result = await response.json();
+                console.log(result);
+
+            });
+
+            // Se perder o foco, volta ao valor atual
+            select.addEventListener('blur', function () {
+                if (cell.contains(select)) {
+                    const textoSelecionado = select.options[select.selectedIndex].text;
+                    cell.textContent = textoSelecionado;
+                }
+            });
+        });
+    });
+    container.querySelectorAll('.status-cell').forEach(cell => {
+        cell.addEventListener('click', function (e) {
+            if (cell.querySelector('select')) return; // já está editando
+
+            const valorAtual = cell.textContent.trim();
+            const select = document.createElement('select');
+            opcoesStatus.forEach((opcao, idx) => {
+                const opt = document.createElement('option');
+                opt.value = idx+1; // valor numérico sequencial
+                opt.textContent = opcao; // texto visível é a string da opção
+                if (opcao === valorAtual) opt.selected = true;
+                select.appendChild(opt);
+            });
+
+            cell.textContent = '';
+            cell.appendChild(select);
+            select.focus();
+
+            select.addEventListener('change', async function () {
+                const novoValor = select.value;
+                const novoTexto = select.options[select.selectedIndex].text;
+                const tr = cell.closest('tr');
+                const id = tr.getAttribute('id');
+                cell.textContent = novoTexto;
+
+                // Envie para o backend
+                const response = await fetch('../backend/editarValidade.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        id: id,
+                        coluna: 'status',
+                        valor: novoValor
+                    })
+                });
+                const result = await response.json();
+                console.log(result);
+
+            });
+
+            // Se perder o foco, volta ao valor atual
+            select.addEventListener('blur', function () {
+                if (cell.contains(select)) {
+                    const textoSelecionado = select.options[select.selectedIndex].text;
+                    cell.textContent = textoSelecionado;
+                }
+            });
+        });
+    });
 }
 
 // Ação de consulta com base no filtro
