@@ -121,7 +121,7 @@ formProd.addEventListener('submit', async (e) => {
         console.log(dados);
         if (result.sucesso) {
             // Redireciona para outra página, por exemplo, sucesso.html
-            window.location.href = 'success.html';
+            window.location.href = 'success.php';
         } else {
             alert(result.mensagem || 'Erro ao enviar dados.');
         }
