@@ -185,7 +185,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                         })
                     });
                     const result = await response.json();
-                    console.log(result);
+                    /* console.log(result); */
                 } catch (e) {
                     console.error('Erro ao salvar tratativa:', e);
                     alert('Erro ao salvar alteração. Tente novamente.');
@@ -248,7 +248,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                         })
                     });
                     const result = await response.json();
-                    console.log(result);
+                    /* console.log(result); */
                 } catch (e) {
                     console.error('Erro ao salvar status:', e);
                     alert('Erro ao salvar alteração. Tente novamente.');
