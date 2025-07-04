@@ -136,6 +136,7 @@ if ($matricula === null) {
                     <thead>
                         <tr>
                             <th scope="col">#</th>
+                            <th scope="col">Filial</th>
                             <th scope="col">Código</th>
                             <th scope="col">Desc</th>
                             <th scope="col">Dt. Validade</th>
@@ -147,7 +148,7 @@ if ($matricula === null) {
                 </table>
             </div>
             <div class="button_container">
-                <a href="../home.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
+                <a href="./index.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
                 <button type="submit" class="btn btn-primary" id="next">Enviar</button>
             </div>
         </form>

@@ -53,6 +53,7 @@ function renderTable() {
         prodList.innerHTML += `
             <tr>
                 <th scope="row">${i + 1}</th>
+                <td>${dados['user']['filial']}</td>
                 <td>${item.codprod}</td>
                 <td>${item.descricao}</td>
                 <td>${item.validade}</td>
@@ -108,7 +109,7 @@ formProd.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     try {
-        const response = await fetch('https://hipersenna.com.br/validade/backend/dadosValidade.php', {
+        const response = await fetch('https://hipersenna.com.br/vencimento/backend/dadosValidade.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

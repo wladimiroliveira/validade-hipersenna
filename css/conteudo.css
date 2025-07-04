@@ -1,11 +1,11 @@
 .conteudo {
     display: flex;
-    padding: 4rem;
     justify-content: center;
 }
 
 .section-filial {
     text-align: center;
+    padding: 4rem 0;
 }
 
 .form-filial_container {
