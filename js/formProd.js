@@ -20,7 +20,7 @@ const prodList = document.getElementById('produtosList');
 const userInfo = {
     nome: document.getElementById('userNome').innerHTML,
     matricula: document.getElementById('userMatricula').innerHTML,
-    filial: document.getElementById('userFilial').innerHTML
+    filial: dados['user']['filial']
 };
 
 dados['user']['nome'] = userInfo['nome'];
