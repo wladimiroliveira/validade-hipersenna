@@ -71,8 +71,8 @@ if ($matricula === null) {
     <link rel="stylesheet" href="./css/reset.css">    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../config/styles.css">
-    <link rel="stylesheet" href="./css/style.css?=v2">
-    <link rel="stylesheet" href="./css/formProd.css?=v3">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/formProd.css">
     <link rel="shortcut icon" href="./assets/img/icon/logo-icone.ico" type="image/x-icon">
     <title>Vencimento</title>
     <script>
