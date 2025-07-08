@@ -119,6 +119,9 @@ function montarTabelaDiasAVencer(tabela, container) {
                 <td>${item.quant}</td>
                 <td>${item.codfornec}</td>
                 <td>${item.codcomp}</td>
+                <td>${item.data_insercao}</td>
+                <td>${item.matricula_colaborador}</td>
+                <td>${item.nome_colaborador}</td>
                 <td>${item.data_validade}</td>
                 <td>${item.dias_restantes} dia(s)</td>
                 <td>${item.g1}</td>
@@ -146,6 +149,9 @@ function montarTabelaDiasAVencer(tabela, container) {
                             <th scope="col">QUANTIDADE</th>
                             <th scope="col">CODFORNEC</th>
                             <th scope="col">CODCOMPRADOR</th>
+                            <th scope="col">DATA DE INSERÇÃO</th>
+                            <th scope="col">MATRÍCULA COLAB</th>
+                            <th scope="col">NOME COLAB</th>
                             <th scope="col">DATA DE VALIDADE</th>
                             <th scope="col">DIAS RESTANTES</th>
                             <th scope="col">GIRO F1</th>
