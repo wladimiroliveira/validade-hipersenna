@@ -10,6 +10,10 @@ const analiseDados = {
     data: {
         inicial: '',
         final: ''
+    },
+    dataBonus: {
+        inicial: '',
+        final: ''
     }
 };
 
@@ -18,6 +22,8 @@ function limparFiltro(){
     document.getElementById('numBonus').value = '';
     document.getElementById('data-ini').value = '';
     document.getElementById('data-fim').value = '';
+    document.getElementById('data-ini_bonus').value = '';
+    document.getElementById('data-fim_bonus').value = '';
     document.getElementById('fornecedor').value = '';
     document.getElementById('secao').value = '';
     document.getElementById('produto').value = '';
@@ -32,6 +38,8 @@ function coletarDados() {
     analiseDados.bonus = document.getElementById('numBonus').value;
     analiseDados.data.inicial = document.getElementById('data-ini').value;
     analiseDados.data.final = document.getElementById('data-fim').value;
+    analiseDados.dataBonus.inicial = document.getElementById('data-ini_bonus').value;
+    analiseDados.dataBonus.final = document.getElementById('data-fim_bonus').value;
     analiseDados.fornecedor = document.getElementById('fornecedor').value;
     analiseDados.secao = document.getElementById('secao').value;
     analiseDados.produto = document.getElementById('produto').value;
@@ -117,7 +125,7 @@ async function consultar(e) {
     coletarDados();
 
     // Validação básica
-    if (!analiseDados.bonus && !analiseDados.data.inicial && !analiseDados.data.final) {
+    if (!analiseDados.bonus && !analiseDados.data.inicial && !analiseDados.data.final && !analiseDados.dataBonus.final && !analiseDados.dataBonus.inicial) {
         alert('Por favor, insira os dados necessários');
         return;
     }
@@ -210,6 +218,7 @@ function montarTabela(tabela, container) {
                 <td>${item.desc}</td>
                 <td>${item.quantnf}</td>
                 <td>${item.quantent}</td>
+                <td>${item.dtbonus}</td>
                 <td>${item.dtvalidade}</td>
                 <td>${item.diasrestantes}</td>
                 <td>${item.codfornec}</td>
@@ -238,6 +247,7 @@ function montarTabela(tabela, container) {
                             <th>DESCRIÇÃO</th>
                             <th>QT NF</th>
                             <th>QT ENTRADA</th>
+                            <th>DATA DO BÔNUS</th>
                             <th>DATA VALIDADE</th>
                             <th>DIAS RESTANTES</th>
                             <th>COD FORNECEDOR</th>
