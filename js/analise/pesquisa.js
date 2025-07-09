@@ -6,6 +6,7 @@ const analiseDados = {
     bonus: '',
     fornecedor: '',
     secao: '',
+    departamento: '',
     produto: '',
     data: {
         inicial: '',
@@ -22,10 +23,10 @@ function limparFiltro(){
     document.getElementById('numBonus').value = '';
     document.getElementById('data-ini').value = '';
     document.getElementById('data-fim').value = '';
-    document.getElementById('data-ini_bonus').value = '';
+    /* document.getElementById('data-ini_bonus').value = '';
     document.getElementById('data-fim_bonus').value = '';
-    document.getElementById('fornecedor').value = '';
-    document.getElementById('secao').value = '';
+    document.getElementById('fornecedor').value = ''; */
+    document.getElementById('departamento').value = '';
     document.getElementById('produto').value = '';
     resultContainer.innerHTML = ''; // Limpa os resultados da tabela
 
@@ -38,10 +39,10 @@ function coletarDados() {
     analiseDados.bonus = document.getElementById('numBonus').value;
     analiseDados.data.inicial = document.getElementById('data-ini').value;
     analiseDados.data.final = document.getElementById('data-fim').value;
-    analiseDados.dataBonus.inicial = document.getElementById('data-ini_bonus').value;
-    analiseDados.dataBonus.final = document.getElementById('data-fim_bonus').value;
-    analiseDados.fornecedor = document.getElementById('fornecedor').value;
-    analiseDados.secao = document.getElementById('secao').value;
+    /* analiseDados.dataBonus.inicial = document.getElementById('data-ini_bonus').value;
+    analiseDados.dataBonus.final = document.getElementById('data-fim_bonus').value; 
+    analiseDados.fornecedor = document.getElementById('fornecedor').value; */
+    analiseDados.departamento = document.getElementById('departamento').value;
     analiseDados.produto = document.getElementById('produto').value;
 }
 
@@ -219,7 +220,6 @@ function montarTabela(tabela, container) {
                 <td>${item.bn}</td>
                 <td>${item.fl}</td>
                 <td>${item.dp}</td>
-                <td>${item.sec}</td>
                 <td>${item.codprod}</td>
                 <td>${item.desc}</td>
                 <td>${item.quantnf}</td>
@@ -249,7 +249,6 @@ function montarTabela(tabela, container) {
                             <th>BÔNUS</th>
                             <th>FILIAL</th>
                             <th>DEPARTAMENTO</th>
-                            <th>SEÇÃO</th>
                             <th>COD PRODUTO</th>
                             <th>DESCRIÇÃO</th>
                             <th>QT NF</th>

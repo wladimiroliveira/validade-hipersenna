@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="data_container">
+                    <!-- <div class="data_container">
                         <div class="data-range_container">
                             <h4 class="data-range_titulo">Data do bônus</h4>
                             <div class="data-ini_container">
@@ -75,15 +75,15 @@
                                 <input type="date" name="data-fim" id="data-fim_bonus" class="form-control" placeholder="DD/MM/AAAA">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="filtros_container">
-                        <div class="fornecedor_container">
+                        <!-- <div class="fornecedor_container">
                             <label for="fornecedor" class="form-label">Fornecedor</label>
                             <input type="number" class="form-control" id="fornecedor">
-                        </div>
-                        <div class="secao_container">
-                            <label for="fornecedor" class="form-label">Seção</label>
-                            <input type="number" class="form-control" id="secao">
+                        </div> -->
+                        <div class="departamento_container">
+                            <label for="fornecedor" class="form-label">Departamento</label>
+                            <input type="number" class="form-control" id="departamento">
                         </div>
                         <div class="produto_container">
                             <label for="fornecedor" class="form-label">Produto</label>
