@@ -79,7 +79,7 @@
         </div>
     </section>
     <section class="sec_result">
-        <div class="result_container"></div>
+        <div class="result_container" id="resultContainer"></div>
     </section>
 </main>
 
