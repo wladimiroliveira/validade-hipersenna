@@ -108,6 +108,11 @@ function diasParaVencer(dataValidadeStr) {
 }
 
 function gerarCorProximidade(diasRestantes) {
+
+    if(diasRestantes){
+        return '#8B0000';
+    }
+
     const maxDias = 30;
     const fator = Math.max(0, Math.min(1, 1 - (diasRestantes / maxDias)));
 
@@ -198,10 +203,10 @@ function montarTabela(tabela, container) {
 
     let linhas = '';
     for (let item of tabela) {
-        const diasRestantes = diasParaVencer(item.dtvalidade);
+        const diasRestantes = item.diasrestantes ? parseInt(item.diasrestantes) : '---';
         let classeLinha = '';
 
-        if (diasRestantes <= 0) {
+        if (diasRestantes <= 0 || diasRestantes === '---') {
             classeLinha = 'vencido';
         } else if (diasRestantes <= 30) {
             const faixa = Math.ceil(diasRestantes / 5) * 5;
@@ -220,9 +225,10 @@ function montarTabela(tabela, container) {
                 <td>${item.quantent}</td>
                 <td>${item.dtbonus}</td>
                 <td>${item.dtvalidade}</td>
-                <td>${item.diasrestantes}</td>
+                <td>${diasRestantes}</td>
                 <td>${item.codfornec}</td>
                 <td>${item.codcomprador}</td>
+                <td>${item.nomecomprador}</td>
                 <td>${item.g1}</td>
                 <td>${item.g2}</td>
                 <td>${item.g3}</td>
@@ -252,6 +258,7 @@ function montarTabela(tabela, container) {
                             <th>DIAS RESTANTES</th>
                             <th>COD FORNECEDOR</th>
                             <th>COD COMPRADOR</th>
+                            <th>NOME COMPRADOR</th>
                             <th>GIRO F1</th>
                             <th>GIRO F2</th>
                             <th>GIRO F3</th>
