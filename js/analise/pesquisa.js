@@ -35,7 +35,7 @@ pesquisar.addEventListener('click', async (e) => {
             body: JSON.stringify(analiseDados)
         });
 
-        const result = await response.text();
+        const result = await response.json();
         console.log("Resposta: ", result);
         return result;
     } catch (e) {
