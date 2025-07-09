@@ -111,10 +111,11 @@ function montarTabelaDiasAVencer(tabela, container) {
 
     let linhas = '';
     for (let item of tabela) {
-        const diasRestantes = diasParaVencer(item.data_validade);
+        const parsedDias = parseInt(item.dias_restantes);
+        const diasRestantes = !isNaN(parsedDias) ? parsedDias : '---';
         let classeLinha = '';
 
-        if (diasRestantes <= 0) {
+        if (diasRestantes <= 0 || diasRestantes === '---') {
             classeLinha = 'vencido';
         } else if (diasRestantes <= 30) {
             const faixa = Math.ceil(diasRestantes / 5) * 5;
@@ -130,11 +131,12 @@ function montarTabelaDiasAVencer(tabela, container) {
                 <td>${item.quant}</td>
                 <td>${item.codfornec}</td>
                 <td>${item.codcomp}</td>
+                <td>${item.nomecomprador}</td>
                 <td>${item.data_insercao}</td>
                 <td>${item.matricula_colaborador}</td>
                 <td>${item.nome_colaborador}</td>
                 <td>${item.data_validade}</td>
-                <td>${item.dias_restantes} dia(s)</td>
+                <td>${diasRestantes} dia(s)</td>
                 <td>${item.g1}</td>
                 <td>${item.g2}</td>
                 <td>${item.g3}</td>
@@ -160,6 +162,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                             <th scope="col">QUANTIDADE</th>
                             <th scope="col">CODFORNEC</th>
                             <th scope="col">CODCOMPRADOR</th>
+                            <th scope="col">NOME COMPRADOR</th>
                             <th scope="col">DATA DE INSERÇÃO</th>
                             <th scope="col">MATRÍCULA COLAB</th>
                             <th scope="col">NOME COLAB</th>

@@ -203,7 +203,8 @@ function montarTabela(tabela, container) {
 
     let linhas = '';
     for (let item of tabela) {
-        const diasRestantes = item.diasrestantes ? parseInt(item.diasrestantes) : '---';
+        const parsedDias = parseInt(item.diasrestantes, 10);
+        const diasRestantes = !isNaN(parsedDias) ? parsedDias : '---';
         let classeLinha = '';
 
         if (diasRestantes <= 0 || diasRestantes === '---') {
@@ -225,7 +226,7 @@ function montarTabela(tabela, container) {
                 <td>${item.quantent}</td>
                 <td>${item.dtbonus}</td>
                 <td>${item.dtvalidade}</td>
-                <td>${diasRestantes}</td>
+                <td>${diasRestantes} dia(s)</td>
                 <td>${item.codfornec}</td>
                 <td>${item.codcomprador}</td>
                 <td>${item.nomecomprador}</td>
