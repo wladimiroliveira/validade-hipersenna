@@ -3,6 +3,11 @@ main {
     margin: auto;
 }
 
+.sec_intro {
+    text-align: center;
+    padding: 0 0 4rem 0;
+}
+
 /* item container */
 
 .item_container {
@@ -33,4 +38,14 @@ main {
 
 .data_container .data-range_container label {
     font-weight: 700;
+}
+/* filtros */
+
+.filtros_container label {
+    margin: 0;
+    font-weight: 700;
+}
+
+.filtros_container input {
+    width: 140px;
 }

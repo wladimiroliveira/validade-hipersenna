@@ -14,7 +14,7 @@
 </head>
 <body>
 <header class="cabecalho">
-    <?php include_once('../config/navbar.php')?>
+    <!-- <?php include_once('../config/navbar.php')?> -->
 </header>
 <main class="conteudo">
     <section class="sec_intro">
@@ -46,21 +46,34 @@
                     </div>
                     <div class="data_container">
                         <div class="data-range_container">
-                            <label for="data">Data de validade</label>
                             <div class="data-ini_container">
-                                <label for="data">Data inicial</label>
-                                <input type="date" name="data" id="data" class="form-control" placeholder="DD/MM/AAAA">
+                                <label for="data-ini">Data inicial</label>
+                                <input type="date" name="data-ini" id="data-ini" class="form-control">
                             </div>
                             <div class="data-fim_container">
-                                <label for="data">Data fim</label>
-                                <input type="date" name="data" id="data" class="form-control" placeholder="DD/MM/AAAA">
+                                <label for="data-fim">Data fim</label>
+                                <input type="date" name="data-fim" id="data-fim" class="form-control" placeholder="DD/MM/AAAA">
                             </div>
+                        </div>
+                    </div>
+                    <div class="filtros_container">
+                        <div class="fornecedor_container">
+                            <label for="fornecedor" class="form-label">Fornecedor</label>
+                            <input type="number" class="form-control" id="fornecedor">
+                        </div>
+                        <div class="secao_container">
+                            <label for="fornecedor" class="form-label">Seção</label>
+                            <input type="number" class="form-control" id="secao">
+                        </div>
+                        <div class="produto_container">
+                            <label for="fornecedor" class="form-label">Produto</label>
+                            <input type="number" class="form-control" id="produto">
                         </div>
                     </div>
                 </div>
                 <div class="button_container">
                     <a href="./index.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
-                    <button type="submit" class="btn btn-primary" id="next">Pesquisar</button>
+                    <button type="submit" class="btn btn-primary" id="pesquisar">Pesquisar</button>
                 </div>
             </form>
         </div>
@@ -69,5 +82,7 @@
         <div class="result_container"></div>
     </section>
 </main>
+
+<script src="./js/analise/pesquisa.js"></script>
 </body>
 </html>
