@@ -49,3 +49,7 @@ main {
 .filtros_container input {
     width: 140px;
 }
+
+#limpar {
+    display: none;
+}

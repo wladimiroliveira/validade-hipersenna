@@ -9,12 +9,18 @@
     <link rel="stylesheet" href="./css/painel.css">
     <link rel="stylesheet" href="./css/relatorios/tabela.css">
     <link rel="stylesheet" href="./css/analise/analise.css">
+    <link rel="stylesheet" href="./css/analise/loading.css">
     <link rel="shortcut icon" href="./assets/img/icon/logo-icone.ico" type="image/x-icon">
     <title>Painel Vencimento</title>
 </head>
 <body>
+<!-- 🔄 Overlay de Loading -->
+<div id="loadingOverlay" class="loading-overlay hidden">
+    <div class="spinner"></div>
+    <p>Carregando dados, por favor aguarde...</p>
+</div>
 <header class="cabecalho">
-    <!-- <?php include_once('../config/navbar.php')?> -->
+    <?php include_once('../config/navbar.php')?>
 </header>
 <main class="conteudo">
     <section class="sec_intro">
@@ -46,6 +52,7 @@
                     </div>
                     <div class="data_container">
                         <div class="data-range_container">
+                            <h4 class="data-range_titulo">Data de validade</h4>
                             <div class="data-ini_container">
                                 <label for="data-ini">Data inicial</label>
                                 <input type="date" name="data-ini" id="data-ini" class="form-control">
@@ -74,6 +81,7 @@
                 <div class="button_container">
                     <a href="./index.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
                     <button type="submit" class="btn btn-primary" id="pesquisar">Pesquisar</button>
+                    <button type="button" class="btn btn-danger" id="limpar">Limpar</button>
                 </div>
             </form>
         </div>
