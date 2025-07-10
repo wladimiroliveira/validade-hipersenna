@@ -98,13 +98,14 @@ $tipoUser = $_SESSION['user_permissao'];
                 </select>
             </div>
             <div class="filial_container">
-                <label for="filial"><strong>Filial *</strong></label>
                 <?php if($tipoUser === 'u') :?>
-                    <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
-                        <option selected value="<?php $user_filial ;?>">Filial <?php $user_filial;?></option>
-                        <!-- <option value="8">8 - Canaã</option> -->
-                    </select>
+                <label for="filial" style="display: none;"><strong>Filial *</strong></label>
+                <select class="form-select" id="filial" name="filial" aria-label="Default select example" required style="display: none;">
+                    <option selected value="<?php $user_filial ;?>">Filial <?php $user_filial;?></option>
+                    <!-- <option value="8">8 - Canaã</option> -->
+                </select>
                 <?php else:?>
+                    <label for="filial"><strong>Filial *</strong></label>
                     <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
                         <option selected value="todas">Todas</option>
                         <option value="1">1 - Matriz</option>
