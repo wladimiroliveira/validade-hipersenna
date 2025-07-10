@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (data.sucesso) {
                             campoDescricao.textContent = data.descricao;
                         } else {
-                            campoDescricao.textContent = 'Produto não encontrado';
+                            campoDescricao.textContent = 'Departamento não encontrado';
                         }
                     }
                 })
