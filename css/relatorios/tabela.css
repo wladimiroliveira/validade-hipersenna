@@ -1,5 +1,5 @@
 .result_container {
-    width: 95%;
+    width: 97%;
     margin: 4rem auto;
 }
 
@@ -43,7 +43,7 @@
     overflow: auto;
     min-width: 400px;
     max-width: 100%;
-    width: 80%; /* ou outro valor inicial */
+    width: 100%; /* ou outro valor inicial */
     
     margin: 0 auto; /* <== centraliza horizontalmente */
     border: 1px solid #ccc;

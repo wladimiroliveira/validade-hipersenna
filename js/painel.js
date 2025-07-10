@@ -7,7 +7,7 @@ const elementosConsulta = {
 
 const elementosCsv = {
     container: document.getElementById('csvContainer'),
-    botao: document.getElementById('botaoExportarCSV')
+    botao: document.getElementById('exportar')
 };
 
 

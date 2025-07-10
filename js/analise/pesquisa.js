@@ -32,6 +32,7 @@ function limparFiltro(){
     resultContainer.innerHTML = ''; // Limpa os resultados da tabela
 
     limparBtn.style.display = 'none';
+    exportarBtn.style.display = 'none';
 }
 
 // 🔹 Coleta os dados dos inputs
@@ -132,7 +133,7 @@ async function exportarComExcelJS(tabelaId = 'resultTable', nomeArquivo = 'venci
         { wch: 10 }, // FILIAL
         { wch: 10 }, // DPTO
         { wch: 15 }, // COD PROD
-        { wch: 40 }, // DESCRIÇÃO
+        { wch: 45 }, // DESCRIÇÃO
         { wch: 15 }, // QT ENTRADA
         { wch: 15 }, // DT DO BÔNUS (aumentei um pouco para caber a data)
         { wch: 15 }, // DT VALIDADE (aumentei um pouco para caber a data)
@@ -181,35 +182,6 @@ async function exportarComExcelJS(tabelaId = 'resultTable', nomeArquivo = 'venci
     link.click();
     document.body.removeChild(link);
 }
-/* function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xlsx') {
-    const tabela = document.getElementById(tabelaId);
-    if (!tabela) return;
-
-    const wb = XLSX.utils.book_new();
-    const ws = XLSX.utils.table_to_sheet(tabela);
-
-    // (opcional) aplica largura de colunas
-    ws['!cols'] = [
-        { wch: 10 },
-        { wch: 40 },
-        { wch: 15 },
-        { wch: 12 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 },
-        { wch: 10 }
-    ];
-
-    XLSX.utils.book_append_sheet(wb, ws, 'Vencimentos');
-    XLSX.writeFile(wb, nomeArquivo);
-} */
 
 function diasParaVencer(dataValidadeStr) {
     const hoje = new Date();
@@ -357,22 +329,22 @@ function montarTabela(tabela, container) {
                         <tr>
                             <th>BÔNUS</th>
                             <th>FILIAL</th>
-                            <th>DPTO</th>
-                            <th>COD PROD</th>
+                            <th scope="col"><abbr title="Departamento">DPTO</abbr></th>
+                            <th scope="col"><abbr title="Código do produto">CODPROD</abbr></th>
                             <th>DESCRIÇÃO</th>
-                            <th>QT ENTRADA</th>
-                            <th>DT DO BÔNUS</th>
-                            <th>DT VALIDADE</th>
-                            <th>D. RESTANTES</th>
-                            <th>FORNECEDOR</th>
-                            <th>COD COMPRADOR</th>
+                            <th><abbr title="Quantidade de entrada">QT ENTRADA</abbr></th>
+                            <th><abbr title="Data do bônus">DT DO BÔNUS</abbr></th>
+                            <th scope="col"><abbr title="Data de validade">DT.VALIDADE</abbr></th>
+                            <th scope="col"><abbr title="Dias para vencer">D.RESTANTES</abbr></th>
+                            <th scope="col"><abbr title="Código do fornecedor">C.FORNEC</abbr></th>
+                            <th scope="col"><abbr title="Código do comprador">C.COMPRADOR</abbr></th>
                             <th>NOME COMPRADOR</th>
-                            <th>GIRO F1</th>
-                            <th>GIRO F2</th>
-                            <th>GIRO F3</th>
-                            <th>GIRO F4</th>
-                            <th>GIRO F5</th>
-                            <th>GIRO F7</th>
+                            <th scope="col"><abbr title="Giro mês filial 1">GIRO F1</abbr></th>
+                            <th scope="col"><abbr title="Giro mês filial 2">GIRO F2</abbr></th>
+                            <th scope="col"><abbr title="Giro mês filial 3">GIRO F3</abbr></th>
+                            <th scope="col"><abbr title="Giro mês filial 4">GIRO F4</abbr></th>
+                            <th scope="col"><abbr title="Giro mês filial 5">GIRO F5</abbr></th>
+                            <th scope="col"><abbr title="Giro mês filial 7">GIRO F7</abbr></th>
                         </tr>
                     </thead>
                     <tbody>
