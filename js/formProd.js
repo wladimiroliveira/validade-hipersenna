@@ -11,7 +11,7 @@ const hiddenNome = document.getElementById('nome');
 
 const formProd = document.querySelector('.form__validade_prod');
 const insertBtn = document.getElementById('prodInserir');
-const inputCodprod = document.getElementById('codProd');
+const inputCodprod = document.getElementById('produto');
 const inputDescricao = document.querySelector('.result_descricao');
 const inputData = document.getElementById('data');
 const inputQuant = document.getElementById('quantidade');
