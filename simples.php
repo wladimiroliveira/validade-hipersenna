@@ -99,7 +99,7 @@ $tipoUser = $_SESSION['user_permissao'];
             </div>
             <div class="filial_container">
                 <label for="filial"><strong>Filial *</strong></label>
-                <?php if($tipoUser === 'a') :?>
+                <?php if($tipoUser === 'u') :?>
                     <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
                         <option selected value="<?php $user_filial ;?>">Filial</option>
                         <!-- <option value="8">8 - Canaã</option> -->
