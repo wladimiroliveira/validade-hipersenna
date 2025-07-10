@@ -1,0 +1,162 @@
+/* table-features.css */
+
+/* --- Estilos para o Menu de Colunas --- */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dropdown-menu label {
+    font-family: sans-serif;
+    display: block;
+    padding: 8px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.dropdown-menu label:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-container:hover .dropdown-menu {
+    display: block;
+}
+
+/* Classe para ocultar colunas */
+.column-hidden {
+    display: none;
+}
+
+/* --- Estilos para o Filtro por Coluna --- */
+th {
+    position: relative; /* Essencial para posicionar ícones e pop-ups */
+}
+
+.filter-icon {
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 5px;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.7); /* Cor sutil no cabeçalho */
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.filter-icon:hover {
+    color: white;
+}
+
+.filter-icon.active {
+    color: #FFD700; /* Dourado para indicar filtro ativo */
+}
+
+
+#filter-popup {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+    padding: 15px;
+    min-width: 240px;
+    color: #333;
+    font-family: sans-serif;
+}
+
+#filter-search {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.filter-options {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.filter-options div {
+    margin-bottom: 5px;
+    display: block;
+    white-space: nowrap;
+}
+.filter-options div label{
+    font-size: 14px;
+}
+
+.filter-buttons {
+    margin-top: 15px;
+    text-align: right;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.filter-buttons button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+
+.filter-buttons .apply-btn {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.filter-buttons .clear-btn {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.filter-actions {
+    margin: -5px 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+}
+
+.filter-actions a {
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.filter-actions a:hover {
+    text-decoration: underline;
+}

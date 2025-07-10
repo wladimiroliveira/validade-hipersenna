@@ -33,6 +33,7 @@ function limparFiltro(){
 
     limparBtn.style.display = 'none';
     exportarBtn.style.display = 'none';
+    document.getElementById('table-controls').style.display = 'none';
 }
 
 // 🔹 Coleta os dados dos inputs
@@ -368,6 +369,8 @@ function montarTabela(tabela, container) {
     // Adiciona o botão de limpar
     limparBtn.style.display = 'inline-block';
     exportarBtn.style.display = 'inline-block';
+
+    InteractiveTable.init('resultTable', 'table-controls');
 }
 
 // 🔹 Botão pesquisar
