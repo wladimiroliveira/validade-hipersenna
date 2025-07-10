@@ -335,7 +335,7 @@ function montarTabela(tabela, container) {
                 <td>${item.quantent}</td>
                 <td>${item.dtbonus}</td>
                 <td>${item.dtvalidade}</td>
-                <td>${diasRestantes} dia(s)</td>
+                <td>${diasRestantes}</td>
                 <td>${item.codfornec}</td>
                 <td>${item.codcomprador}</td>
                 <td>${item.nomecomprador}</td>
@@ -357,8 +357,8 @@ function montarTabela(tabela, container) {
                         <tr>
                             <th>BÔNUS</th>
                             <th>FILIAL</th>
-                            <th>DEPARTAMENTO</th>
-                            <th>COD PRODUTO</th>
+                            <th>DPTO</th>
+                            <th>COD PROD</th>
                             <th>DESCRIÇÃO</th>
                             <th>QT ENTRADA</th>
                             <th>DT DO BÔNUS</th>
