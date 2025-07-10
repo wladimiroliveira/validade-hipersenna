@@ -101,7 +101,7 @@ $tipoUser = $_SESSION['user_permissao'];
                 <?php if($tipoUser === 'u') :?>
                 <label for="filial" style="display: none;"><strong>Filial *</strong></label>
                 <select class="form-select" id="filial" name="filial" aria-label="Default select example" required style="display: none;">
-                    <option selected value="<?php $user_filial ;?>">Filial <?php $user_filial;?></option>
+                    <option selected value="<?php echo $user_filial ;?>">Filial <?php echo $user_filial;?></option>
                     <!-- <option value="8">8 - Canaã</option> -->
                 </select>
                 <?php else:?>
