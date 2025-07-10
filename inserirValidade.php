@@ -113,7 +113,7 @@ if ($matricula === null) {
             <div class="mb-3 line">
                 <label for="codProd" class="form-label">Código do produto</label>
                 <div class="input_container">
-                    <input type="number" class="form-control" id="codProd">
+                    <input type="number" class="form-control" id="produto">
                     <div class="result_container">
                         <p class="result_descricao"></p>
                     </div>

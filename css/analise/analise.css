@@ -46,6 +46,46 @@ main {
     font-weight: 700;
 }
 
+/* departamento */
+
+.departamento_container .input_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.departamento_container .input_container .retorno-departamento_container {
+    padding: 6px 12px;
+    min-width: 200px;
+    max-width: 200px;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.departamento_container .input_container .retorno-departamento_container p {
+    margin: 0;
+}
+
+/* produto */
+
+.produto_container .input_container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.produto_container .input_container .retorno-produto_container {
+    padding: 6px 12px;
+    min-width: 400px;
+    max-width: 400px;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.produto_container .input_container .retorno-produto_container p {
+    margin: 0;
+}
+
 .filtros_container input {
     width: 140px;
 }

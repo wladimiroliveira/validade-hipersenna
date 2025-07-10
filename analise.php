@@ -1,68 +1,3 @@
-<?php
-// Iniciar a sessão
-session_start();
-
-// Configurações iniciais para os cookies de sessão
-session_set_cookie_params([
-    'lifetime' => 1800,
-    'secure' => true,   // True se estiver usando HTTPS
-    'httponly' => true, // Impede o acesso ao cookie via JavaScript
-    'samesite' => 'Strict' // Limita o envio de cookies a solicitações do mesmo site
-]);
-
-// Verifica se o usuário está logado.
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    header('Location: ../login.php');
-    exit();
-}
-
-// Define o tempo máximo de inatividade permitido (ex: 30 minutos)
-$max_inatividade = 1800;  // em segundos
-
-// Verifica se a variável de sessão foi definida
-if (isset($_SESSION['ultimo_acesso']) && (time() - $_SESSION['ultimo_acesso'] > $max_inatividade)) {
-    // Sessão expirou
-    session_unset();   // Limpa as variáveis de sessão
-    session_destroy(); // Destrói a sessão
-    header('Location: ../login.php'); // Redireciona para a página de login
-    exit;
-}
-
-// Regenera ID da sessão para prevenir ataques de fixação de sessão
-session_regenerate_id(true);
-
-// Atualiza o tempo de último acesso na sessão
-$_SESSION['ultimo_acesso'] = time();
-
-// Verifica se o usuário tem permissão para acessar
-$permissoesPermitidas = ['a', 'u', 'e'];
-
-if (!isset($_SESSION['user_permissao']) || !in_array($_SESSION['user_permissao'], $permissoesPermitidas)) {
-    header('Location: ../home.php');
-    exit();
-}
-
-// Inclui o arquivo de configuração
-include('../config/config.php');
-include('../config/navbar.php');
-
-// --- Recupera Dados do Usuário da Sessão ---
-// Usa o operador de coalescência nula (??) para fornecer um valor padrão se a variável de sessão não estiver definida
-$user_filial = $_SESSION['user_filial'] ?? '';
-$user_name = $_SESSION['nome_usuario'] ?? '';
-
-// Converte a matrícula para inteiro, se existir, ou define como null
-$matricula = isset($_SESSION['matricula']) ? (int) $_SESSION['matricula'] : null;
-
-// Define a data atual no formato 'dia-Mês-Ano'
-$data_lancamento = date('d-M-Y', strtotime('today'));
-
-// --- Verificação de Matrícula (Opcional, mas recomendado para dados críticos) ---
-// Interrompe a execução do script e exibe um erro se a matrícula for inválida
-if ($matricula === null) {
-    die("Erro: Matrícula do usuário não encontrada ou inválida.");
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -148,12 +83,22 @@ if ($matricula === null) {
                             <input type="number" class="form-control" id="fornecedor">
                         </div> -->
                         <div class="departamento_container">
-                            <label for="fornecedor" class="form-label">Departamento</label>
-                            <input type="number" class="form-control" id="departamento">
+                            <label for="departamento" class="form-label">Departamento</label>
+                            <div class="input_container">
+                                <input type="number" class="form-control" id="departamento">
+                                <div class="retorno-departamento_container" id="retornoDepartamento">
+                                    <p class="result_descricao-departamento"></p>
+                                </div>
+                            </div>
                         </div>
                         <div class="produto_container">
-                            <label for="fornecedor" class="form-label">Produto</label>
-                            <input type="number" class="form-control" id="produto">
+                            <label for="produto" class="form-label">Produto</label>
+                            <div class="input_container">
+                                <input type="number" class="form-control" id="produto">
+                                <div class="retorno-produto_container">
+                                    <p class="result_descricao"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,6 +128,8 @@ if ($matricula === null) {
 
 <script src="./js/analise/pesquisa.js"></script>
 <script src="./js/analise/tabela-feature.js"></script>
+<script src="./js/descricao.js"></script>
+<script src="./js/departamento.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
 </body>
 </html>

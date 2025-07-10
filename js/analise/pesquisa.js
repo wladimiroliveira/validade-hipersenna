@@ -223,8 +223,6 @@ async function consultar(e) {
     const resultado = await enviarDados(analiseDados);
     esconderLoading();
 
-    console.log(resultado);
-
     montarTabela(resultado, resultContainer);
     tornarColunasRedimensionaveis("resultTable");
 }

@@ -1,29 +1,28 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const inputCodProd = document.getElementById('produto');
-    const campoDescricao = document.querySelector('.result_descricao');
+    const inputCodepto = document.getElementById('departamento');
+    const campoDescricao = document.querySelector('.result_descricao-departamento');
 
     let debounceTimer = null;
     let ultimoCodigoBuscado = '';
 
-    inputCodProd.addEventListener('input', function () {
-        const codprod = inputCodProd.value.trim();
+    inputCodepto.addEventListener('input', function () {
+        const codepto = inputCodepto.value.trim();
 
         clearTimeout(debounceTimer);
 
-        if (codprod.length === 0) {
+        if (codepto.length === 0) {
             campoDescricao.textContent = '';
             return;
         }
 
         // Espera 400ms após o usuário parar de digitar
         debounceTimer = setTimeout(() => {
-            ultimoCodigoBuscado = codprod; // Armazena o código que está sendo buscado
-
-            fetch(`https://hipersenna.com.br/dev_assets/api/validade/buscar_descricao.php?codprod=${codprod}`)
+            ultimoCodigoBuscado = codepto; // Armazena o código que está sendo buscado
+            fetch(`https://hipersenna.com.br/dev_assets/api/validade/buscar_departamento.php?codepto=${codepto}`)
                 .then(response => response.json())
                 .then(data => {
                     // Garante que o valor exibido corresponde ao último código digitado
-                    if (inputCodProd.value.trim() === ultimoCodigoBuscado) {
+                    if (inputCodepto.value.trim() === ultimoCodigoBuscado) {
                         if (data.sucesso) {
                             campoDescricao.textContent = data.descricao;
                         } else {
