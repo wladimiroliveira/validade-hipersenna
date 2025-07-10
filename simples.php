@@ -48,7 +48,7 @@ include('../config/navbar.php');
 
 // --- Recupera Dados do Usuário da Sessão ---
 // Usa o operador de coalescência nula (??) para fornecer um valor padrão se a variável de sessão não estiver definida
-$user_filial = $_SESSION['user_filial'] ?? '';
+$user_filial = $_SESSION['user_filial'] ?? '2';
 $user_name = $_SESSION['nome_usuario'] ?? '';
 
 // Converte a matrícula para inteiro, se existir, ou define como null
