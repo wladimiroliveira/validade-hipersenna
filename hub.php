@@ -102,6 +102,14 @@ if ($matricula === null) {
                 </div>
             </div>
         </a>
+        <a href="./detalhado.php" style="text-decoration: none;">
+            <div class="card" style="width: 18rem;">
+                <img src="./assets/img/Análise de Dados Modernos.png" class="card-img-top" alt="Relatório detalhado">
+                <div class="card-body">
+                    <p class="card-text"><strong>Análise</strong>. Utilize este relatório quando quiser analisar dados de validade vinculados aos bônus.</p>
+                </div>
+            </div>
+        </a>
     </div>
 </section>
 </main>
