@@ -20,7 +20,7 @@
     <p>Carregando dados, por favor aguarde...</p>
 </div>
 <header class="cabecalho">
-    <?php include_once('../config/navbar.php')?>
+    <!-- <?php include_once('../config/navbar.php')?>-->
 </header>
 <main class="conteudo">
     <section class="sec_intro">
@@ -95,6 +95,7 @@
                     <a href="./index.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
                     <button type="submit" class="btn btn-primary" id="pesquisar">Pesquisar</button>
                     <button type="button" class="btn btn-danger" id="limpar">Limpar</button>
+                    <button type="button" class="btn btn-success" id="exportar">Exportar</button>
                 </div>
             </form>
         </div>
@@ -105,5 +106,6 @@
 </main>
 
 <script src="./js/analise/pesquisa.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
 </body>
 </html>
