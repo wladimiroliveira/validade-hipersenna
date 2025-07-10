@@ -20,7 +20,7 @@
     <p>Carregando dados, por favor aguarde...</p>
 </div>
 <header class="cabecalho">
-    <?php include_once('../config/navbar.php')?>
+    <!-- <?php include_once('../config/navbar.php')?>-->
 </header>
 <main class="conteudo">
     <section class="sec_intro">
@@ -63,7 +63,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="data_container">
+                    <!-- <div class="data_container">
                         <div class="data-range_container">
                             <h4 class="data-range_titulo">Data do bônus</h4>
                             <div class="data-ini_container">
@@ -75,15 +75,15 @@
                                 <input type="date" name="data-fim" id="data-fim_bonus" class="form-control" placeholder="DD/MM/AAAA">
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="filtros_container">
-                        <div class="fornecedor_container">
+                        <!-- <div class="fornecedor_container">
                             <label for="fornecedor" class="form-label">Fornecedor</label>
                             <input type="number" class="form-control" id="fornecedor">
-                        </div>
+                        </div> -->
                         <div class="secao_container">
-                            <label for="fornecedor" class="form-label">Seção</label>
-                            <input type="number" class="form-control" id="secao">
+                            <label for="fornecedor" class="form-label">Departamento</label>
+                            <input type="number" class="form-control" id="departamento">
                         </div>
                         <div class="produto_container">
                             <label for="fornecedor" class="form-label">Produto</label>
@@ -95,6 +95,7 @@
                     <a href="./index.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
                     <button type="submit" class="btn btn-primary" id="pesquisar">Pesquisar</button>
                     <button type="button" class="btn btn-danger" id="limpar">Limpar</button>
+                    <button type="button" class="btn btn-success" id="exportar">Exportar</button>
                 </div>
             </form>
         </div>
@@ -105,5 +106,6 @@
 </main>
 
 <script src="./js/analise/pesquisa.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
 </body>
 </html>

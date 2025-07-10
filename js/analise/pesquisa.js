@@ -1,11 +1,13 @@
 const pesquisar = document.getElementById('pesquisar');
 const limparBtn = document.getElementById('limpar');
+const exportarBtn = document.getElementById('exportar');
 const resultContainer = document.getElementById('resultContainer');
 const analiseDados = {
     filial: '',
     bonus: '',
     fornecedor: '',
     secao: '',
+    departamento: '',
     produto: '',
     data: {
         inicial: '',
@@ -22,10 +24,11 @@ function limparFiltro(){
     document.getElementById('numBonus').value = '';
     document.getElementById('data-ini').value = '';
     document.getElementById('data-fim').value = '';
-    document.getElementById('data-ini_bonus').value = '';
+    /* document.getElementById('data-ini_bonus').value = '';
     document.getElementById('data-fim_bonus').value = '';
     document.getElementById('fornecedor').value = '';
-    document.getElementById('secao').value = '';
+    document.getElementById('secao').value = '';*/
+    document.getElementById('departamento').value = '';
     document.getElementById('produto').value = '';
     resultContainer.innerHTML = ''; // Limpa os resultados da tabela
 
@@ -38,10 +41,11 @@ function coletarDados() {
     analiseDados.bonus = document.getElementById('numBonus').value;
     analiseDados.data.inicial = document.getElementById('data-ini').value;
     analiseDados.data.final = document.getElementById('data-fim').value;
-    analiseDados.dataBonus.inicial = document.getElementById('data-ini_bonus').value;
+    /* analiseDados.dataBonus.inicial = document.getElementById('data-ini_bonus').value;
     analiseDados.dataBonus.final = document.getElementById('data-fim_bonus').value;
     analiseDados.fornecedor = document.getElementById('fornecedor').value;
-    analiseDados.secao = document.getElementById('secao').value;
+    analiseDados.secao = document.getElementById('secao').value; */
+    analiseDados.departamento = document.getElementById('departamento').value;
     analiseDados.produto = document.getElementById('produto').value;
 }
 
@@ -70,7 +74,116 @@ async function enviarDados(payload) {
     }
 }
 
-function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xlsx') {
+/**
+ * Exporta uma tabela HTML para um arquivo .xlsx usando a biblioteca exceljs.
+ *
+ * @param {string} tabelaId O ID da tabela HTML a ser exportada.
+ * @param {string} nomeArquivo O nome do arquivo .xlsx a ser gerado.
+ */
+async function exportarComExcelJS(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xlsx') {
+    const tabela = document.getElementById(tabelaId);
+    if (!tabela) {
+        console.error(`Tabela com id "${tabelaId}" não encontrada.`);
+        return;
+    }
+
+    // 1. Criar um novo Workbook e uma Worksheet
+    const workbook = new ExcelJS.Workbook();
+    const worksheet = workbook.addWorksheet('Vencimentos');
+
+    // ATUALIZADO: Define os índices das colunas de data (baseados em zero)
+    // "DT DO BÔNUS" é a 7ª coluna, então índice 6
+    // "DT VALIDADE" é a 8ª coluna, então índice 7
+    const dateColumnIndices = [6, 7];
+
+    // 2. Iterar sobre as linhas da tabela HTML para extrair os dados
+    const linhas = tabela.rows;
+    for (let i = 0; i < linhas.length; i++) {
+        const linhaTabela = linhas[i];
+        const celulas = Array.from(linhaTabela.cells).map((cell, colIndex) => {
+            if (dateColumnIndices.includes(colIndex)) {
+                // Tenta analisar a string da data em um objeto Date
+                try {
+                    // Assume que a data pode vir como "dd/mm/yyyy" ou "yyyy-mm-dd"
+                    // Se a sua data estiver em "dd/mm/yyyy", você precisará convertê-la para "yyyy-mm-dd" para o construtor Date
+                    const dateParts = cell.innerText.split('/');
+                    let formattedDateString;
+                    if (dateParts.length === 3) {
+                        formattedDateString = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
+                    } else {
+                        formattedDateString = cell.innerText; // Assume que já está em um formato que Date pode entender (e.g., YYYY-MM-DD)
+                    }
+
+                    const date = new Date(formattedDateString);
+                    // Verifica se a data é válida antes de retorná-la como um objeto Date
+                    return isNaN(date.getTime()) ? cell.innerText : date;
+                } catch (e) {
+                    console.warn(`Não foi possível analisar a data para a coluna ${colIndex}: ${cell.innerText}`, e);
+                    return cell.innerText; // Retorna a string se a análise falhar
+                }
+            }
+            return cell.innerText;
+        });
+        worksheet.addRow(celulas);
+    }
+
+    // ATUALIZADO: Aplicar largura de colunas.
+    // Você tem 18 colunas agora, então a matriz 'larguras' deve ter 18 entradas.
+    const larguras = [
+        { wch: 10 }, // BÔNUS
+        { wch: 10 }, // FILIAL
+        { wch: 10 }, // DPTO
+        { wch: 15 }, // COD PROD
+        { wch: 40 }, // DESCRIÇÃO
+        { wch: 15 }, // QT ENTRADA
+        { wch: 15 }, // DT DO BÔNUS (aumentei um pouco para caber a data)
+        { wch: 15 }, // DT VALIDADE (aumentei um pouco para caber a data)
+        { wch: 15 }, // D. RESTANTES
+        { wch: 15 }, // FORNECEDOR
+        { wch: 15 }, // COD COMPRADOR
+        { wch: 40 }, // NOME COMPRADOR
+        { wch: 10 }, // GIRO F1
+        { wch: 10 }, // GIRO F2
+        { wch: 10 }, // GIRO F3
+        { wch: 10 }, // GIRO F4
+        { wch: 10 }, // GIRO F5
+        { wch: 10 }  // GIRO F7
+    ];
+
+    worksheet.columns.forEach((column, index) => {
+        if (larguras[index]) {
+            column.width = larguras[index].wch;
+        }
+    });
+    
+    // Exemplo de como você poderia estilizar o cabeçalho (a primeira linha)
+    const headerRow = worksheet.getRow(1);
+    headerRow.font = { name: 'Calibri', size: 12, bold: true };
+    headerRow.fill = {
+        type: 'pattern',
+        pattern:'solid',
+        fgColor:{ argb:'FFD3D3D3' } // Cor cinza claro
+    };
+    headerRow.alignment = { vertical: 'middle', horizontal: 'center' };
+
+    // ATUALIZADO: Define um formato de data padrão para as colunas de data
+    // Agora as colunas são 7 (índice 6) e 8 (índice 7)
+    worksheet.getColumn(7).numFmt = 'dd/mm/yyyy'; // 'Data do Bônus'
+    worksheet.getColumn(8).numFmt = 'dd/mm/yyyy'; // 'Data Validade'
+
+
+    // 4. Gerar o arquivo e iniciar o download no navegador
+    const buffer = await workbook.xlsx.writeBuffer();
+    const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = nomeArquivo;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+/* function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xlsx') {
     const tabela = document.getElementById(tabelaId);
     if (!tabela) return;
 
@@ -98,7 +211,7 @@ function exportarTabela(tabelaId = 'resultTable', nomeArquivo = 'vencimentos.xls
 
     XLSX.utils.book_append_sheet(wb, ws, 'Vencimentos');
     XLSX.writeFile(wb, nomeArquivo);
-}
+} */
 
 function diasParaVencer(dataValidadeStr) {
     const hoje = new Date();
@@ -218,10 +331,8 @@ function montarTabela(tabela, container) {
                 <td>${item.bn}</td>
                 <td>${item.fl}</td>
                 <td>${item.dp}</td>
-                <td>${item.sec}</td>
                 <td>${item.codprod}</td>
                 <td>${item.desc}</td>
-                <td>${item.quantnf}</td>
                 <td>${item.quantent}</td>
                 <td>${item.dtbonus}</td>
                 <td>${item.dtvalidade}</td>
@@ -247,16 +358,14 @@ function montarTabela(tabela, container) {
                         <tr>
                             <th>BÔNUS</th>
                             <th>FILIAL</th>
-                            <th>DEPARTAMENTO</th>
-                            <th>SEÇÃO</th>
-                            <th>COD PRODUTO</th>
+                            <th>DPTO</th>
+                            <th>COD PROD</th>
                             <th>DESCRIÇÃO</th>
-                            <th>QT NF</th>
                             <th>QT ENTRADA</th>
-                            <th>DATA DO BÔNUS</th>
-                            <th>DATA VALIDADE</th>
-                            <th>DIAS RESTANTES</th>
-                            <th>COD FORNECEDOR</th>
+                            <th>DT DO BÔNUS</th>
+                            <th>DT VALIDADE</th>
+                            <th>D. RESTANTES</th>
+                            <th>FORNECEDOR</th>
                             <th>COD COMPRADOR</th>
                             <th>NOME COMPRADOR</th>
                             <th>GIRO F1</th>
@@ -287,9 +396,14 @@ function montarTabela(tabela, container) {
 
     // Adiciona o botão de limpar
     limparBtn.style.display = 'inline-block';
+    exportarBtn.style.display = 'inline-block';
 }
 
 // 🔹 Botão pesquisar
 pesquisar.addEventListener('click', consultar);
 
 limparBtn.addEventListener('click', limparFiltro);
+
+exportarBtn.addEventListener('click', () => {
+    exportarComExcelJS('resultTable', 'vencimentos.xlsx');
+});
