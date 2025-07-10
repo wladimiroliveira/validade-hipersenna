@@ -35,7 +35,7 @@ session_regenerate_id(true);
 $_SESSION['ultimo_acesso'] = time();
 
 // Verifica se o usuário tem permissão para acessar
-$permissoesPermitidas = ['a', 'u', 'e'];
+$permissoesPermitidas = ['a', 'e'];
 
 if (!isset($_SESSION['user_permissao']) || !in_array($_SESSION['user_permissao'], $permissoesPermitidas)) {
     header('Location: ../home.php');

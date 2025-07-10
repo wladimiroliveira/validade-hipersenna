@@ -62,6 +62,8 @@ $data_lancamento = date('d-M-Y', strtotime('today'));
 if ($matricula === null) {
     die("Erro: Matrícula do usuário não encontrada ou inválida.");
 }
+
+$tipoUser = $_SESSION['user_permissao'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -97,17 +99,24 @@ if ($matricula === null) {
             </div>
             <div class="filial_container">
                 <label for="filial"><strong>Filial *</strong></label>
-                <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
-                    <option selected value="todas">Todas</option>
-                    <option value="1">1 - Matriz</option>
-                    <option value="2">2 - Faruk</option>
-                    <option value="3">3 - Carajás</option>
-                    <option value="4">4 - VS10</option>
-                    <option value="5">5 - Xinguara</option>
-                    <option value="6">6 - DP6</option>
-                    <option value="7">7 - Cidade Jardim</option>
-                    <!-- <option value="8">8 - Canaã</option> -->
-                </select>
+                <?php if($tipoUser === 'a') :?>
+                    <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
+                        <option selected value="<?php $user_filial ;?>">Filial</option>
+                        <!-- <option value="8">8 - Canaã</option> -->
+                    </select>
+                <?php else:?>
+                    <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
+                        <option selected value="todas">Todas</option>
+                        <option value="1">1 - Matriz</option>
+                        <option value="2">2 - Faruk</option>
+                        <option value="3">3 - Carajás</option>
+                        <option value="4">4 - VS10</option>
+                        <option value="5">5 - Xinguara</option>
+                        <option value="6">6 - DP6</option>
+                        <option value="7">7 - Cidade Jardim</option>
+                        <!-- <option value="8">8 - Canaã</option> -->
+                    </select>
+                <?php endif;?>
             </div>
             
         </div>
