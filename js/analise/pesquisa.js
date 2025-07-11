@@ -136,6 +136,7 @@ async function enviarDados(payload) {
         }
 
         const result = await response.json();
+        console.log(result);
         /* console.log("Resposta do servidor:", result); */
         return result;
     } catch (error) {
@@ -207,6 +208,7 @@ async function exportarComExcelJS(tabelaId = 'resultTable', nomeArquivo = 'venci
         { wch: 15 }, // COD PROD
         { wch: 45 }, // DESCRIÇÃO
         { wch: 15 }, // QT ENTRADA
+        { wch: 15 }, // QT CONFERIDA
         { wch: 15 }, // DT DO BÔNUS (aumentei um pouco para caber a data)
         { wch: 15 }, // DT VALIDADE (aumentei um pouco para caber a data)
         { wch: 15 }, // D. RESTANTES
@@ -375,6 +377,7 @@ function montarTabela(tabela, container) {
                 <td>${item.codprod}</td>
                 <td>${item.desc}</td>
                 <td>${item.quantent}</td>
+                <td>${item.qtconf}</td>
                 <td>${item.dtbonus}</td>
                 <td>${item.dtvalidade}</td>
                 <td>${diasRestantes}</td>
@@ -403,6 +406,7 @@ function montarTabela(tabela, container) {
                             <th scope="col"><abbr title="Código do produto">CODPROD</abbr></th>
                             <th>DESCRIÇÃO</th>
                             <th><abbr title="Quantidade de entrada">QT ENTRADA</abbr></th>
+                            <th><abbr title="Quantidade conferida">QT CONF</abbr></th>
                             <th><abbr title="Data do bônus">DT DO BÔNUS</abbr></th>
                             <th scope="col"><abbr title="Data de validade">DT.VALIDADE</abbr></th>
                             <th scope="col"><abbr title="Dias para vencer">D.RESTANTES</abbr></th>
