@@ -86,30 +86,20 @@ if ($matricula === null) {
         <h1 class="intro_titulo text-center m-4">Relatórios</h1>
     </div>
     <div class="card_container">
-        <a href="./simples.php" style="text-decoration: none;">
-            <div class="card" style="width: 18rem;">
-                <img src="./assets/img/Relatório Simples com Gráfico de Barras.png" class="card-img-top" alt="Relatório simples">
-                <div class="card-body">
-                    <p class="card-text"><strong>Relatório simples</strong>. Utilize este relatório quando estiver precisando apenas visualizar os registros.</p>
-                </div>
-            </div>
-        </a>
-        <a href="./detalhado.php" style="text-decoration: none;">
             <div class="card" style="width: 18rem;">
                 <img src="./assets/img/ChatGPT Image 30 de jun. de 2025, 11_21_03.png" class="card-img-top" alt="Relatório detalhado">
                 <div class="card-body">
                     <p class="card-text"><strong>Relatório detalhado</strong>. Utilize este relatório quando quiser realizar consultas detalhadas e delegar vistorias.</p>
                 </div>
+                <a class="btn btn-success" href="./detalhado.php" style="text-decoration: none;">Relatório detalhado</a>
             </div>
-        </a>
-        <a href="./analise.php" style="text-decoration: none;">
             <div class="card" style="width: 18rem;">
                 <img src="./assets/img/Análise de Dados Modernos.png" class="card-img-top" alt="Relatório detalhado">
                 <div class="card-body">
                     <p class="card-text"><strong>Análise</strong>. Utilize este relatório quando quiser analisar dados de validade vinculados aos bônus.</p>
                 </div>
+                <a class="btn btn-success" href="./analise.php" style="text-decoration: none;">Anáilise</a>
             </div>
-        </a>
     </div>
 </section>
 </main>

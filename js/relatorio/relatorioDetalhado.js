@@ -456,6 +456,8 @@ async function consultar(control) {
     if (tabela.length > 0 && elementosCsv['botao']) {
         elementosCsv['botao'].classList.add('ativo');
     }
+
+    InteractiveTable.init('resultTable', 'table-controls');
 }
 
 // Eventos
