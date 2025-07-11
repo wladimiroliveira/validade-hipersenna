@@ -1,0 +1,22 @@
+.produto_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.produto_container input {
+    width: 100px;
+}
+
+.produto_container .retorno_container {
+    padding: 6px 12px;
+    min-width: 200px;
+    max-width: 200px;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.produto_container .retorno_container p {
+    margin: 0;
+}

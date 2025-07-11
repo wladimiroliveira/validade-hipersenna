@@ -75,6 +75,7 @@ if ($matricula === null) {
     <link rel="stylesheet" href="./css/relatorios/tabela.css">
     <link rel="stylesheet" href="./css/relatorios/loading.css">
     <link rel="stylesheet" href="./css/analise/tabela-feature.css">
+    <link rel="stylesheet" href="./css/relatorios/detalhado.css">
     <link rel="shortcut icon" href="./assets/img/icon/logo-icone.ico" type="image/x-icon">
     <title>Painel Vencimento</title>
 </head>
@@ -93,33 +94,39 @@ if ($matricula === null) {
     </section>
     <section class="filtro_container">
         <div class="select_container">
-            <div class="tipo_container">
-                <label for="tipo"><strong>Buscar dados por:</strong></label>
-                <select class="form-select" id="selectControl" aria-label="Default select example">
-                    <option selected disabled>Selecione uma modalidade</option>
-                    <option value="diasParaVencer">Qt dias para vencer</option>
-                    <option value="dataIntervalo">Intervalo de data</option>
-                </select>
+            <div class="top_container">
+                <div class="tipo_container">
+                    <label for="tipo"><strong>Buscar dados por:</strong></label>
+                    <select class="form-select" id="selectControl" aria-label="Default select example">
+                        <option selected disabled>Selecione uma modalidade</option>
+                        <option value="diasParaVencer">Qt dias para vencer</option>
+                        <option value="dataIntervalo">Intervalo de data</option>
+                    </select>
+                </div>
+                <div class="filial_container">
+                    <label for="filial"><strong>Filial *</strong></label>
+                    <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
+                        <option selected value="todas">Todas</option>
+                        <option value="1">1 - Matriz</option>
+                        <option value="2">2 - Faruk</option>
+                        <option value="3">3 - Carajás</option>
+                        <option value="4">4 - VS10</option>
+                        <option value="5">5 - Xinguara</option>
+                        <option value="6">6 - DP6</option>
+                        <option value="7">7 - Cidade Jardim</option>
+                        <!-- <option value="8">8 - Canaã</option> -->
+                    </select>
+                </div>
             </div>
-            <div class="filial_container">
-                <label for="filial"><strong>Filial *</strong></label>
-                <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
-                    <option selected value="todas">Todas</option>
-                    <option value="1">1 - Matriz</option>
-                    <option value="2">2 - Faruk</option>
-                    <option value="3">3 - Carajás</option>
-                    <option value="4">4 - VS10</option>
-                    <option value="5">5 - Xinguara</option>
-                    <option value="6">6 - DP6</option>
-                    <option value="7">7 - Cidade Jardim</option>
-                    <!-- <option value="8">8 - Canaã</option> -->
-                </select>
-            </div>
-            
+            <div class="produto_container">
+                <label for="produto"><strong>Produto:</strong></label>
+                <input type="number" class="form-control" name="produto" id="produto">
+                <div class="retorno_container">
+                    <p class="result_descricao"></p>
+                </div>
+            </div>            
         </div>
-        <div class="info_container" id="infoContainer">
-            
-        </div>
+        <div class="info_container" id="infoContainer"></div>
         <div class="button_container">
             <a href="<?php echo $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/vencimento/hub.php'; ?>" class="btn btn-secondary">Voltar</a>
             <button type="button" class="btn btn-primary" id="botaoConsultar">Consultar</button>
@@ -143,5 +150,6 @@ if ($matricula === null) {
 <script src="./js/painel.js"></script>
 <script src="./js/relatorio/relatorioDetalhado.js"></script>
 <script src="./js/analise/tabela-feature.js"></script>
+<script src="./js/descricao.js"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ const elementosCsv = {
 const dados = {
     filial: '',
     paraVencer: '',
+    produto: '',
     intervaloData: {
         dataIni: '',
         dataFim: ''

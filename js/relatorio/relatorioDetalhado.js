@@ -417,28 +417,32 @@ async function consultar(control) {
     if (tipoFiltro === 'diasParaVencer') {
         const filial = document.getElementById('filial')?.value;
         const dias = document.getElementById('dias')?.value;
+        const produto = document.getElementById('produto')?.value;
         if (!dias || isNaN(dias)) {
             alert("Por favor, informe a quantidade de dias.");
             return;
         }
-
+        
         payload = { 
             filial: filial,
-            paraVencer: dias 
+            paraVencer: dias,
+            produto: produto
         };
-
+        
     } else if (tipoFiltro === 'dataIntervalo') {
         const filial = document.getElementById('filial')?.value;
         const dataIni = document.getElementById('dataInicio')?.value;
         const dataFim = document.getElementById('dataFim')?.value;
-
+        const produto = document.getElementById('produto')?.value;
+        
         if (!dataIni || !dataFim) {
             alert("Por favor, preencha as duas datas.");
             return;
         }
-
+        
         payload = {
             filial: filial,
+            produto: produto,
             intervaloData: {
                 dataIni,
                 dataFim

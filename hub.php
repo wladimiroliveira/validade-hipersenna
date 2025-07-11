@@ -72,6 +72,7 @@ if ($matricula === null) {
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/painel.css">
     <link rel="stylesheet" href="./css/relatorios/hub.css">
+    <link rel="stylesheet" href="./css/hub.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vencimento</title>
@@ -86,18 +87,10 @@ if ($matricula === null) {
         <h1 class="intro_titulo text-center m-4">Relatórios</h1>
     </div>
     <div class="card_container">
-            <div class="card" style="width: 18rem;">
-                <img src="./assets/img/ChatGPT Image 30 de jun. de 2025, 11_21_03.png" class="card-img-top" alt="Relatório detalhado">
-                <div class="card-body">
-                    <p class="card-text"><strong>Relatório detalhado</strong>. Utilize este relatório quando quiser realizar consultas detalhadas e delegar vistorias.</p>
-                </div>
+            <div class="cartao">
                 <a class="btn btn-success" href="./detalhado.php" style="text-decoration: none;">Relatório detalhado</a>
             </div>
-            <div class="card" style="width: 18rem;">
-                <img src="./assets/img/Análise de Dados Modernos.png" class="card-img-top" alt="Relatório detalhado">
-                <div class="card-body">
-                    <p class="card-text"><strong>Análise</strong>. Utilize este relatório quando quiser analisar dados de validade vinculados aos bônus.</p>
-                </div>
+            <div class="cartao">
                 <a class="btn btn-success" href="./analise.php" style="text-decoration: none;">Anáilise</a>
             </div>
     </div>
