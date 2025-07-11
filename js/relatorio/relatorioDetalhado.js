@@ -7,6 +7,9 @@ const opcoesTratativa = [
     "⁠Troca com Fornecedor",
     "⁠Transferência Interna",
     "⁠Bloqueio para Venda",
+    "Produto vendável dentro do prazo⁠",
+    "Lançamento tardío⁠",
+    "Vencido⁠",
     "⁠Doação"
 ];
 
