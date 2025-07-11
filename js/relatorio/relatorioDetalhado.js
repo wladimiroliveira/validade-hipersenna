@@ -444,8 +444,8 @@ async function consultar(control) {
             filial: filial,
             produto: produto,
             intervaloData: {
-                dataIni,
-                dataFim
+                dataIni: dataIni,
+                dataFim: dataFim
             }
         };
     } else {
