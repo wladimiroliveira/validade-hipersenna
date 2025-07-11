@@ -1,3 +1,4 @@
+const gerarPdfBtn = document.getElementById('gerar-pdf-btn');
 const pesquisar = document.getElementById('pesquisar');
 const limparBtn = document.getElementById('limpar');
 const exportarBtn = document.getElementById('exportar');
@@ -19,6 +20,72 @@ const analiseDados = {
     }
 };
 
+// VERSÃO DE DEPURAÇÃO - Substitua a sua função por esta
+async function gerarRelatorioPDF() {
+    console.log("Iniciando gerarRelatorioPDF..."); // Log 1
+
+    const tabela = document.getElementById('resultTable');
+    if (!tabela) {
+        alert("A tabela de resultados não foi encontrada.");
+        console.error("Tabela com ID 'resultTable' não encontrada.");
+        return;
+    }
+
+    const headers = [...tabela.querySelectorAll('thead th')];
+    const linhas = tabela.querySelectorAll('tbody tr');
+    const dadosParaPdf = [];
+
+    const indiceColunas = {
+        codprod: headers.findIndex(th => th.textContent.trim().includes('CODPROD')),
+        descricao: headers.findIndex(th => th.textContent.trim().includes('DESCRIÇÃO')),
+        validade: headers.findIndex(th => th.textContent.trim().includes('DT.VALIDADE')),
+        qtd: headers.findIndex(th => th.textContent.trim().includes('QT ENTRADA'))
+    };
+
+    // Log 2: Verificar os índices encontrados. Se algum for -1, o nome da coluna está errado.
+    console.log("Índices das colunas encontrados:", indiceColunas);
+
+    for (const key in indiceColunas) {
+        if (indiceColunas[key] === -1) {
+            alert(`Erro Crítico: A coluna "${key.toUpperCase()}" não foi encontrada no cabeçalho da tabela. Verifique o texto exato no TH.`);
+            return;
+        }
+    }
+
+    linhas.forEach(linha => {
+        if (linha.style.display !== 'none') {
+            const celulas = linha.querySelectorAll('td');
+            const dadosLinha = {
+                codprod: celulas[indiceColunas.codprod]?.textContent.trim(),
+                descricao: celulas[indiceColunas.descricao]?.textContent.trim(),
+                validade: celulas[indiceColunas.validade]?.textContent.trim(),
+                qtd: celulas[indiceColunas.qtd]?.textContent.trim()
+            };
+            dadosParaPdf.push(dadosLinha);
+        }
+    });
+
+    // Log 3: Verificar quantos dados foram coletados
+    console.log(`Total de linhas visíveis coletadas: ${dadosParaPdf.length}`);
+
+    if (dadosParaPdf.length === 0) {
+        alert("Não há dados visíveis para gerar o relatório.");
+        return;
+    }
+    
+    const inputOculto = document.getElementById('dados_visiveis_input');
+    const formularioPdf = document.getElementById('pdf-form');
+    
+    inputOculto.value = JSON.stringify(dadosParaPdf);
+    
+    // Log 4: Verificar o JSON que será enviado
+    console.log("Enviando formulário com os seguintes dados:", inputOculto.value);
+    
+    formularioPdf.submit();
+}
+
+gerarPdfBtn.addEventListener('click', gerarRelatorioPDF);
+
 function limparFiltro(){
     document.getElementById('filial').value = 'todas';
     document.getElementById('numBonus').value = '';
@@ -34,6 +101,10 @@ function limparFiltro(){
     limparBtn.style.display = 'none';
     exportarBtn.style.display = 'none';
     document.getElementById('table-controls').style.display = 'none';
+
+    document.getElementById('gerar-pdf-btn').style.display = 'none';
+    limparBtn.style.display = 'none';
+    exportarBtn.style.display = 'none';
 }
 
 // 🔹 Coleta os dados dos inputs
@@ -369,7 +440,12 @@ function montarTabela(tabela, container) {
     exportarBtn.style.display = 'inline-block';
 
     InteractiveTable.init('resultTable', 'table-controls');
+
+    document.getElementById('gerar-pdf-btn').style.display = 'inline-block';
+    limparBtn.style.display = 'inline-block';
+    exportarBtn.style.display = 'inline-block';
 }
+
 
 // 🔹 Botão pesquisar
 pesquisar.addEventListener('click', consultar);

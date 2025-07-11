@@ -90,8 +90,13 @@
                     <a href="./index.php"><button type="button" class="btn btn-secondary">Voltar</button></a>
                     <button type="submit" class="btn btn-primary" id="pesquisar">Pesquisar</button>
                     <button type="button" class="btn btn-danger" id="limpar">Limpar</button>
-                    <button type="button" class="btn btn-success" id="exportar">Exportar</button>
+                    <button type="button" class="btn btn-success" id="exportar"><img src="./assets/img/icon/002-excel.png" alt="Excel"></button>
+                    <button id="gerar-pdf-btn" class="btn-pdf btn btn-danger" style="display: none;"><img src="./assets/img/icon/001-pdf-file.png" alt="PDF"></button>
+
                 </div>
+            </form>
+            <form id="pdf-form" action="./backend/gerar_relatorio.php" method="post" target="_blank" style="display: none;">
+                <input type="hidden" name="dados_visiveis" id="dados_visiveis_input">
             </form>
         </div>
     </section>
