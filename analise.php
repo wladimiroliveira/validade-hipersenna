@@ -1,68 +1,3 @@
-<?php
-// Iniciar a sessão
-session_start();
-
-// Configurações iniciais para os cookies de sessão
-session_set_cookie_params([
-    'lifetime' => 1800,
-    'secure' => true,   // True se estiver usando HTTPS
-    'httponly' => true, // Impede o acesso ao cookie via JavaScript
-    'samesite' => 'Strict' // Limita o envio de cookies a solicitações do mesmo site
-]);
-
-// Verifica se o usuário está logado.
-if (!isset($_SESSION['logado']) || $_SESSION['logado'] !== true) {
-    header('Location: ../login.php');
-    exit();
-}
-
-// Define o tempo máximo de inatividade permitido (ex: 30 minutos)
-$max_inatividade = 1800;  // em segundos
-
-// Verifica se a variável de sessão foi definida
-if (isset($_SESSION['ultimo_acesso']) && (time() - $_SESSION['ultimo_acesso'] > $max_inatividade)) {
-    // Sessão expirou
-    session_unset();   // Limpa as variáveis de sessão
-    session_destroy(); // Destrói a sessão
-    header('Location: ../login.php'); // Redireciona para a página de login
-    exit;
-}
-
-// Regenera ID da sessão para prevenir ataques de fixação de sessão
-session_regenerate_id(true);
-
-// Atualiza o tempo de último acesso na sessão
-$_SESSION['ultimo_acesso'] = time();
-
-// Verifica se o usuário tem permissão para acessar
-$permissoesPermitidas = ['a', 'e'];
-
-if (!isset($_SESSION['user_permissao']) || !in_array($_SESSION['user_permissao'], $permissoesPermitidas)) {
-    header('Location: ../home.php');
-    exit();
-}
-
-// Inclui o arquivo de configuração
-include('../config/config.php');
-include('../config/navbar.php');
-
-// --- Recupera Dados do Usuário da Sessão ---
-// Usa o operador de coalescência nula (??) para fornecer um valor padrão se a variável de sessão não estiver definida
-$user_filial = $_SESSION['user_filial'] ?? '';
-$user_name = $_SESSION['nome_usuario'] ?? '';
-
-// Converte a matrícula para inteiro, se existir, ou define como null
-$matricula = isset($_SESSION['matricula']) ? (int) $_SESSION['matricula'] : null;
-
-// Define a data atual no formato 'dia-Mês-Ano'
-$data_lancamento = date('d-M-Y', strtotime('today'));
-
-// --- Verificação de Matrícula (Opcional, mas recomendado para dados críticos) ---
-// Interrompe a execução do script e exibe um erro se a matrícula for inválida
-if ($matricula === null) {
-    die("Erro: Matrícula do usuário não encontrada ou inválida.");
-}
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -97,6 +32,10 @@ if ($matricula === null) {
             <form class="form_pesquisa">
                 <div class="mb-3 line item_container">
                     <div class="line_filial-bonus">
+                        <div class="numbonus_container">
+                            <label for="numBonus" class="form-label">Nº Bônus</label>
+                            <input type="number" class="form-control" id="numBonus">
+                        </div>
                         <div class="filial_container">
                             <label for="filial"><strong>Filial *</strong></label>
                             <select class="form-select" id="filial" name="filial" aria-label="Default select example" required>
@@ -111,57 +50,37 @@ if ($matricula === null) {
                                 <!-- <option value="8">8 - Canaã</option> -->
                             </select>
                         </div>
-                        <div class="numbonus_container">
-                            <label for="numBonus" class="form-label">Nº Bônus</label>
-                            <input type="number" class="form-control" id="numBonus">
-                        </div>
                     </div>
-                    <div class="data_container">
-                        <div class="data-range_container">
-                            <h4 class="data-range_titulo">Data de validade</h4>
-                            <div class="data-ini_container">
-                                <label for="data-ini">Data inicial</label>
-                                <input type="date" name="data-ini" id="data-ini" class="form-control">
+                    <div class="bottom_container">
+                        <div class="filtros_container">
+                            <div class="departamento_container">
+                                <label for="departamento" class="form-label">Departamento:</label>
+                                <div class="input_container">
+                                    <input type="number" class="form-control" id="departamento">
+                                    <div class="retorno-departamento_container" id="retornoDepartamento">
+                                        <p class="result_descricao-departamento"></p>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="data-fim_container">
-                                <label for="data-fim">Data fim</label>
-                                <input type="date" name="data-fim" id="data-fim" class="form-control" placeholder="DD/MM/AAAA">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="data_container">
-                        <div class="data-range_container">
-                            <h4 class="data-range_titulo">Data do bônus</h4>
-                            <div class="data-ini_container">
-                                <label for="data-ini">Data inicial</label>
-                                <input type="date" name="data-ini" id="data-ini_bonus" class="form-control">
-                            </div>
-                            <div class="data-fim_container">
-                                <label for="data-fim">Data fim</label>
-                                <input type="date" name="data-fim" id="data-fim_bonus" class="form-control" placeholder="DD/MM/AAAA">
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="filtros_container">
-                        <!-- <div class="fornecedor_container">
-                            <label for="fornecedor" class="form-label">Fornecedor</label>
-                            <input type="number" class="form-control" id="fornecedor">
-                        </div> -->
-                        <div class="departamento_container">
-                            <label for="departamento" class="form-label">Departamento</label>
-                            <div class="input_container">
-                                <input type="number" class="form-control" id="departamento">
-                                <div class="retorno-departamento_container" id="retornoDepartamento">
-                                    <p class="result_descricao-departamento"></p>
+                            <div class="produto_container">
+                                <label for="produto" class="form-label">Produto:</label>
+                                <div class="input_container">
+                                    <input type="number" class="form-control" id="produto">
+                                    <div class="retorno-produto_container">
+                                        <p class="result_descricao"></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="produto_container">
-                            <label for="produto" class="form-label">Produto</label>
-                            <div class="input_container">
-                                <input type="number" class="form-control" id="produto">
-                                <div class="retorno-produto_container">
-                                    <p class="result_descricao"></p>
+                        <div class="data_container">
+                            <div class="data-range_container">
+                                <div class="data-ini_container">
+                                    <label for="data-ini">Data inicial</label>
+                                    <input type="date" name="data-ini" id="data-ini" class="form-control">
+                                </div>
+                                <div class="data-fim_container">
+                                    <label for="data-fim">Data fim</label>
+                                    <input type="date" name="data-fim" id="data-fim" class="form-control" placeholder="DD/MM/AAAA">
                                 </div>
                             </div>
                         </div>
