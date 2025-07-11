@@ -106,7 +106,7 @@
                 <div class="dropdown-container">
                     <button class="dropdown-button">Exibir/Ocultar Colunas</button>
                     <div id="column-toggle-menu" class="dropdown-menu">
-                        </div>
+                    </div>
                 </div>
             </div>
             <div id="resultContainer"></div>

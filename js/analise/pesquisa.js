@@ -20,9 +20,9 @@ const analiseDados = {
     }
 };
 
-// VERSÃO DE DEPURAÇÃO - Substitua a sua função por esta
+// VERSÃO ATUALIZADA - Substitua a sua função por esta
 async function gerarRelatorioPDF() {
-    console.log("Iniciando gerarRelatorioPDF..."); // Log 1
+    console.log("Iniciando gerarRelatorioPDF...");
 
     const tabela = document.getElementById('resultTable');
     if (!tabela) {
@@ -35,16 +35,18 @@ async function gerarRelatorioPDF() {
     const linhas = tabela.querySelectorAll('tbody tr');
     const dadosParaPdf = [];
 
+    // 1. Encontrar dinamicamente o índice de cada coluna necessária
     const indiceColunas = {
         codprod: headers.findIndex(th => th.textContent.trim().includes('CODPROD')),
         descricao: headers.findIndex(th => th.textContent.trim().includes('DESCRIÇÃO')),
         validade: headers.findIndex(th => th.textContent.trim().includes('DT.VALIDADE')),
-        qtd: headers.findIndex(th => th.textContent.trim().includes('QT ENTRADA'))
+        qtd: headers.findIndex(th => th.textContent.trim().includes('QT ENTRADA')),
+        // ADICIONADO: Encontra o índice da nova coluna.
+        // ATENÇÃO: Verifique se o texto 'QT. CONF' corresponde exatamente ao cabeçalho na sua tabela.
+        qtconf: headers.findIndex(th => th.textContent.trim().includes('QT CONF'))
     };
 
-    // Log 2: Verificar os índices encontrados. Se algum for -1, o nome da coluna está errado.
-    console.log("Índices das colunas encontrados:", indiceColunas);
-
+    // Validação para garantir que todas as colunas foram encontradas
     for (const key in indiceColunas) {
         if (indiceColunas[key] === -1) {
             alert(`Erro Crítico: A coluna "${key.toUpperCase()}" não foi encontrada no cabeçalho da tabela. Verifique o texto exato no TH.`);
@@ -52,35 +54,34 @@ async function gerarRelatorioPDF() {
         }
     }
 
+    // 2. Iterar sobre as linhas da tabela
     linhas.forEach(linha => {
         if (linha.style.display !== 'none') {
             const celulas = linha.querySelectorAll('td');
+            
+            // Monta um objeto com os dados da linha, usando os índices encontrados
             const dadosLinha = {
                 codprod: celulas[indiceColunas.codprod]?.textContent.trim(),
                 descricao: celulas[indiceColunas.descricao]?.textContent.trim(),
                 validade: celulas[indiceColunas.validade]?.textContent.trim(),
-                qtd: celulas[indiceColunas.qtd]?.textContent.trim()
+                qtd: celulas[indiceColunas.qtd]?.textContent.trim(),
+                // ADICIONADO: Coleta o dado da nova coluna.
+                qtconf: celulas[indiceColunas.qtconf]?.textContent.trim()
             };
             dadosParaPdf.push(dadosLinha);
         }
     });
-
-    // Log 3: Verificar quantos dados foram coletados
-    console.log(`Total de linhas visíveis coletadas: ${dadosParaPdf.length}`);
 
     if (dadosParaPdf.length === 0) {
         alert("Não há dados visíveis para gerar o relatório.");
         return;
     }
     
+    // 3. Enviar os dados para o PHP através do formulário oculto
     const inputOculto = document.getElementById('dados_visiveis_input');
     const formularioPdf = document.getElementById('pdf-form');
-    
+
     inputOculto.value = JSON.stringify(dadosParaPdf);
-    
-    // Log 4: Verificar o JSON que será enviado
-    console.log("Enviando formulário com os seguintes dados:", inputOculto.value);
-    
     formularioPdf.submit();
 }
 
