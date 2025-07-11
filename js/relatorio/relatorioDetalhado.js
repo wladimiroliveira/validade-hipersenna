@@ -10,7 +10,7 @@ const opcoesTratativa = [
     "⁠Doação",
     "Vencido",
     "Produto vendável dentro do prazo",
-    "Inserção tardía"
+    "Inserção tardia"
 ];
 
 const opcoesStatus = [
