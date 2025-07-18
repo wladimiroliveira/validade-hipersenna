@@ -173,6 +173,8 @@ function montarTabelaDiasAVencer(tabela, container) {
             </ul>
         </div>
     `;
+
+    InteractiveTable.init('resultTable', 'table-controls');
 }
 
 // Ação de consulta com base no filtro
@@ -216,6 +218,7 @@ async function consultar(control) {
     }
 
     const tabela = await enviarDados(payload);
+    const resultContainer = document.getElementById('resultContainer');
     montarTabelaDiasAVencer(tabela, resultContainer);
 
     if (tabela.length > 0 && elementosCsv['botao']) {

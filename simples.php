@@ -63,6 +63,7 @@ if ($matricula === null) {
     die("Erro: Matrícula do usuário não encontrada ou inválida.");
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -73,6 +74,7 @@ if ($matricula === null) {
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/painel.css">
     <link rel="stylesheet" href="./css/relatorios/tabela.css">
+    <link rel="stylesheet" href="./css/analise/tabela-feature.css">
     <link rel="shortcut icon" href="./assets/img/icon/logo-icone.ico" type="image/x-icon">
     <title>Painel Vencimento</title>
 </head>
@@ -128,12 +130,22 @@ if ($matricula === null) {
             <button type="button" class="btn btn-success btn_export-csv" id="exportar">Exportar</button>
         </div>
     </section>
-    <section class="result_container"  id="resultContainer"></section>
+    <section class="result_container">
+        <div id="table-controls" style="display: none; margin-bottom: 15px;">
+                <div class="dropdown-container">
+                    <button class="dropdown-button">Exibir/Ocultar Colunas</button>
+                    <div id="column-toggle-menu" class="dropdown-menu">
+                    </div>
+                </div>
+            </div>
+            <div id="resultContainer"></div>
+    </section>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
 <script src="./js/painel.js"></script>
 <script src="./js/relatorio/relatorioSimples.js"></script>
+<script src="./js/analise/tabela-feature.js"></script>
 </body>
 </html>
