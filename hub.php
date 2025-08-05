@@ -91,7 +91,7 @@ if ($matricula === null) {
                 <a class="btn btn-success" href="./detalhado.php" style="text-decoration: none;">Relatório detalhado</a>
             </div>
             <div class="cartao">
-                <a class="btn btn-success" href="./analise.php" style="text-decoration: none;">Anáilise</a>
+                <a class="btn btn-success" href="./analise.php" style="text-decoration: none;">Análise</a>
             </div>
     </div>
 </section>
