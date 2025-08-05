@@ -63,7 +63,6 @@ if ($matricula === null) {
     die("Erro: Matrícula do usuário não encontrada ou inválida.");
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -75,6 +74,7 @@ if ($matricula === null) {
     <link rel="stylesheet" href="./css/painel.css">
     <link rel="stylesheet" href="./css/relatorios/tabela.css">
     <link rel="stylesheet" href="./css/analise/tabela-feature.css">
+    <link rel="stylesheet" href="./css/relatorios/simples.css">
     <link rel="shortcut icon" href="./assets/img/icon/logo-icone.ico" type="image/x-icon">
     <title>Painel Vencimento</title>
 </head>
@@ -96,6 +96,19 @@ if ($matricula === null) {
                     <option value="diasParaVencer">Qt dias para vencer</option>
                     <option value="dataIntervalo">Intervalo de data</option>
                 </select>
+            </div>
+            <div class="dataInsercao_container" id="dataInsercaoContainer">
+                <span>Data de inserção</span>
+                <div class="inputs_container">
+                    <div class="data_ini">
+                        <label for="dataInsertIni">Data inicial</label>
+                        <input type="date" class="form-control" id="dataInsertIni" name="dataInsercao">
+                    </div>
+                    <div class="data_fim">
+                        <label for="dataInsertFim">Data final</label>
+                        <input type="date" class="form-control" id="dataInsertFim" name="dataInsercao">
+                    </div>
+                </div>
             </div>
             <div class="filial_container">
                 <?php if($tipoUser === 'u') :?>
@@ -122,7 +135,6 @@ if ($matricula === null) {
             
         </div>
         <div class="info_container" id="infoContainer">
-            
         </div>
         <div class="button_container">
             <a href="<?php echo $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].'/vencimento/hub.php'; ?>" class="btn btn-secondary">Voltar</a>

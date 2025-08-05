@@ -134,6 +134,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                 <td>${item.quant}</td>
                 <td>${item.codfornec}</td>
                 <td>${item.codcomp}</td>
+                <td>${item.data_insercao}</td>
                 <td>${item.data_validade}</td>
                 <td>${diasRestantes}</td>
             </tr>
@@ -152,6 +153,7 @@ function montarTabelaDiasAVencer(tabela, container) {
                         <th scope="col"><abbr title="Quantidade">QUANT</abbr></th>
                         <th scope="col"><abbr title="Código do fornecedor">C.FORNEC</abbr></th>
                         <th scope="col"><abbr title="Código do comprador">C.COMPRADOR</abbr></th>
+                        <th scope="col"><abbr title="Data de validade">DT.INSERÇÃO</abbr></th>
                         <th scope="col"><abbr title="Data de validade">DT.VALIDADE</abbr></th>
                         <th scope="col"><abbr title="Dias para vencer">D.RESTANTES</abbr></th>
                     </tr>
@@ -178,44 +180,22 @@ function montarTabelaDiasAVencer(tabela, container) {
 }
 
 // Ação de consulta com base no filtro
-async function consultar(control) {
-    const tipoFiltro = control.value;
+async function consultar() {
     let payload = {};
-
-    if (tipoFiltro === 'diasParaVencer') {
-        const filial = document.getElementById('filial')?.value;
-        const dias = document.getElementById('dias')?.value;
-        if (!dias || isNaN(dias)) {
-            alert("Por favor, informe a quantidade de dias.");
-            return;
-        }
-
-        payload = { 
-            filial: filial,
-            paraVencer: dias 
-        };
-
-    } else if (tipoFiltro === 'dataIntervalo') {
-        const filial = document.getElementById('filial')?.value;
-        const dataIni = document.getElementById('dataInicio')?.value;
-        const dataFim = document.getElementById('dataFim')?.value;
-
-        if (!dataIni || !dataFim) {
-            alert("Por favor, preencha as duas datas.");
-            return;
-        }
-
-        payload = {
-            filial: filial,
-            intervaloData: {
-                dataIni,
-                dataFim
-            }
-        };
-    } else {
-        alert("Selecione um filtro válido.");
-        return;
+    payload = {
+        filial: document.getElementById('filial')?.value || null,
+        paraVencer: document.getElementById('dias')?.value || null,
+        intervaloData: {
+            dataIni: document.getElementById('dataInicio')?.value || null,
+            dataFim: document.getElementById('dataFim')?.value || null,
+        },
+        dataInsercao: {
+            dataInsertIni: document.getElementById('dataInsertIni')?.value || null,
+            dataInsertFim: document.getElementById('dataInsertFim')?.value || null,
+        },
     }
+    
+    console.log(payload);
 
     const tabela = await enviarDados(payload);
     const resultContainer = document.getElementById('resultContainer');
@@ -224,6 +204,7 @@ async function consultar(control) {
     if (tabela.length > 0 && elementosCsv['botao']) {
         exportarBtn.classList.add('ativo');
     }
+
 }
 
 // Eventos
@@ -232,7 +213,7 @@ elementosConsulta['filtro'].addEventListener('change', () => {
 });
 
 elementosConsulta['botao'].addEventListener('click', () => {
-    consultar(elementosConsulta['filtro']);
+    consultar();
 });
 
 exportarBtn.addEventListener('click', () => {

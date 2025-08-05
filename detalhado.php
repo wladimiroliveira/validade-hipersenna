@@ -76,6 +76,7 @@ if ($matricula === null) {
     <link rel="stylesheet" href="./css/relatorios/loading.css">
     <link rel="stylesheet" href="./css/analise/tabela-feature.css">
     <link rel="stylesheet" href="./css/relatorios/detalhado.css">
+    <link rel="stylesheet" href="./css/relatorios/simples.css">
     <link rel="shortcut icon" href="./assets/img/icon/logo-icone.ico" type="image/x-icon">
     <title>Painel Vencimento</title>
 </head>
@@ -116,6 +117,19 @@ if ($matricula === null) {
                         <option value="7">7 - Cidade Jardim</option>
                         <!-- <option value="8">8 - Canaã</option> -->
                     </select>
+                </div>
+            </div>
+            <div class="dataInsercao_container" id="dataInsercaoContainer">
+                <span>Data de inserção</span>
+                <div class="inputs_container">
+                    <div class="data_ini">
+                        <label for="dataInsertIni">Data inicial</label>
+                        <input type="date" class="form-control" id="dataInsertIni" name="dataInsercao">
+                    </div>
+                    <div class="data_fim">
+                        <label for="dataInsertFim">Data final</label>
+                        <input type="date" class="form-control" id="dataInsertFim" name="dataInsercao">
+                    </div>
                 </div>
             </div>
             <div class="produto_container">

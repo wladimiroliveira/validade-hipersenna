@@ -19,6 +19,10 @@ const dados = {
     intervaloData: {
         dataIni: '',
         dataFim: ''
+    },
+    dataInsercao: {
+        dataIni: '',
+        dataFim: '',
     }
 };
 
@@ -64,6 +68,8 @@ async function enviarDados(payload) {
         });
 
         const result = await response.json();
+
+        console.log(result);
 
         // Garante que seja um array
         if (!Array.isArray(result)) {

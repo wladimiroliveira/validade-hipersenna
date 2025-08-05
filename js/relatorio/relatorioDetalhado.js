@@ -413,48 +413,21 @@ function montarTabelaDiasAVencer(tabela, container) {
 }
 
 // Ação de consulta com base no filtro
-async function consultar(control) {
-    const tipoFiltro = control.value;
+async function consultar() {
     let payload = {};
-
-    if (tipoFiltro === 'diasParaVencer') {
-        const filial = document.getElementById('filial')?.value;
-        const dias = document.getElementById('dias')?.value;
-        const produto = document.getElementById('produto')?.value;
-        if (!dias || isNaN(dias)) {
-            alert("Por favor, informe a quantidade de dias.");
-            return;
-        }
-        
-        payload = { 
-            filial: filial,
-            paraVencer: dias,
-            produto: produto
-        };
-        
-    } else if (tipoFiltro === 'dataIntervalo') {
-        const filial = document.getElementById('filial')?.value;
-        const dataIni = document.getElementById('dataInicio')?.value;
-        const dataFim = document.getElementById('dataFim')?.value;
-        const produto = document.getElementById('produto')?.value;
-        
-        if (!dataIni || !dataFim) {
-            alert("Por favor, preencha as duas datas.");
-            return;
-        }
-        
-        payload = {
-            filial: filial,
-            produto: produto,
-            intervaloData: {
-                dataIni: dataIni,
-                dataFim: dataFim
-            }
-        };
-    } else {
-        alert("Selecione um filtro válido.");
-        return;
-    }
+    payload = {
+        filial: document.getElementById('filial')?.value || null,
+        paraVencer: document.getElementById('dias')?.value || null,
+        produto: document.getElementById('produto')?.value || null,
+        intervaloData: {
+            dataIni: document.getElementById('dataInicio')?.value || null,
+            dataFim: document.getElementById('dataFim')?.value || null,
+        },
+        dataInsercao: {
+            dataInsertIni: document.getElementById('dataInsertIni')?.value || null,
+            dataInsertFim: document.getElementById('dataInsertFim')?.value || null,
+        },
+    };
 
     const tabela = await enviarDados(payload);
     montarTabelaDiasAVencer(tabela, resultContainer);
@@ -473,7 +446,7 @@ elementosConsulta['filtro'].addEventListener('change', () => {
 });
 
 elementosConsulta['botao'].addEventListener('click', () => {
-    consultar(elementosConsulta['filtro']);
+    consultar();
 });
 
 exportarBtn.addEventListener('click', () => {
