@@ -385,12 +385,12 @@ function montarTabela(tabela, container) {
                 <td>${item.codfornec}</td>
                 <td>${item.codcomprador}</td>
                 <td>${item.nomecomprador}</td>
-                <td>${item.media_g1}</td>
-                <td>${item.media_g2}<td>
-                <td>${item.media_g3}</td>
-                <td>${item.media_g4}</td>
-                <td>${item.media_g5}</td>
-                <td>${item.media_g7}</td>
+                <td>${item.media_g1 ? parseFloat(item.media_g1).toFixed(2) : '---'}</td>
+                <td>${item.media_g2 ? parseFloat(item.media_g2).toFixed(2) : '---'}<td>
+                <td>${item.media_g3 ? parseFloat(item.media_g3).toFixed(2) : '---'}</td>
+                <td>${item.media_g4 ? parseFloat(item.media_g4).toFixed(2) : '---'}</td>
+                <td>${item.media_g5 ? parseFloat(item.media_g5).toFixed(2) : '---'}</td>
+                <td>${item.media_g7 ? parseFloat(item.media_g7).toFixed(2) : '---'}</td>
             </tr>
         `;
     }
