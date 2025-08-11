@@ -371,12 +371,12 @@ function montarTabela(tabela, container) {
         }
 
         const giro = {
-            f1: ((item.m1g1 + item.m2g1 + item.m3g1) / 3).toFixed(2),
-            f2: ((item.m1g2 + item.m2g2 + item.m3g2) / 3).toFixed(2),
-            f3: ((item.m1g3 + item.m2g3 + item.m3g3) / 3).toFixed(2),
-            f4: ((item.m1g4 + item.m2g4 + item.m3g4) / 3).toFixed(2),
-            f5: ((item.m1g5 + item.m2g5 + item.m3g5) / 3).toFixed(2),
-            f7: ((item.m1g7 + item.m2g7 + item.m3g7) / 3).toFixed(2),
+            f1: (item.m1g1 + item.m2g1 + item.m3g1) / 3,
+            f2: (item.m1g2 + item.m2g2 + item.m3g2) / 3,
+            f3: (item.m1g3 + item.m2g3 + item.m3g3) / 3,
+            f4: (item.m1g4 + item.m2g4 + item.m3g4) / 3,
+            f5: (item.m1g5 + item.m2g5 + item.m3g5) / 3,
+            f7: (item.m1g7 + item.m2g7 + item.m3g7) / 3,
         }
 
         linhas += `
@@ -403,7 +403,7 @@ function montarTabela(tabela, container) {
             </tr>
         `;
 
-        console.log(giro);
+        console.log(typeof(giro.f1));
     }
 
     container.innerHTML = `
