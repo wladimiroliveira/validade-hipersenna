@@ -225,24 +225,12 @@ function montarTabelaDiasAVencer(tabela, container) {
                 <td>${item.nome_colaborador}</td>
                 <td>${item.data_validade}</td>
                 <td>${diasRestantes}</td>
-                <td>${
-                    ((item.m1g1 + item.m2g1 + item.m3g1) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g2 + item.m2g2 + item.m3g2) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g3 + item.m2g3 + item.m3g3) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g4 + item.m2g4 + item.m3g4) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g5 + item.m2g5 + item.m3g5) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g7 + item.m2g7 + item.m3g7) / 3).toFixed(2)
-                }</td>
+                <td>${item.media_g1 ? parseFloat(item.media_g1).toFixed(2) : '---'}</td>
+                <td>${item.media_g2 ? parseFloat(item.media_g2).toFixed(2) : '---'}</td>
+                <td>${item.media_g3 ? parseFloat(item.media_g3).toFixed(2) : '---'}</td>
+                <td>${item.media_g4 ? parseFloat(item.media_g4).toFixed(2) : '---'}</td>
+                <td>${item.media_g5 ? parseFloat(item.media_g5).toFixed(2) : '---'}</td>
+                <td>${item.media_g7 ? parseFloat(item.media_g7).toFixed(2) : '---'}</td>
                 <td class="tratativa-cell" data-valor="${item.idxtratativa}">${item.tratativa}</td>
                 <td class="status-cell" data-valor="${item.idxstatus}">${item.status}</td>
             </tr>
