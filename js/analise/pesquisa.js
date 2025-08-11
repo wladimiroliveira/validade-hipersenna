@@ -137,7 +137,7 @@ async function enviarDados(payload) {
         }
 
         const result = await response.json();
-        console.log(result);
+        /* console.log(result); */
         /* console.log("Resposta do servidor:", result); */
         return result;
     } catch (error) {
@@ -370,6 +370,15 @@ function montarTabela(tabela, container) {
             classeLinha = `proximo-vencimento-${faixa}`;
         }
 
+        const giro = {
+            f1: ((item.m1g1 + item.m2g1 + item.m3g1) / 3).toFixed(2),
+            f2: ((item.m1g2 + item.m2g2 + item.m3g2) / 3).toFixed(2),
+            f3: ((item.m1g3 + item.m2g3 + item.m3g3) / 3).toFixed(2),
+            f4: ((item.m1g4 + item.m2g4 + item.m3g4) / 3).toFixed(2),
+            f5: ((item.m1g5 + item.m2g5 + item.m3g5) / 3).toFixed(2),
+            f7: ((item.m1g7 + item.m2g7 + item.m3g7) / 3).toFixed(2),
+        }
+
         linhas += `
             <tr class="${classeLinha}" id="${item.id}">
                 <td>${item.bn}</td>
@@ -385,26 +394,16 @@ function montarTabela(tabela, container) {
                 <td>${item.codfornec}</td>
                 <td>${item.codcomprador}</td>
                 <td>${item.nomecomprador}</td>
-                <td>${
-                    ((item.m1g1 + item.m2g1 + item.m3g1) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g2 + item.m2g2 + item.m3g2) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g3 + item.m2g3 + item.m3g3) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g4 + item.m2g4 + item.m3g4) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g5 + item.m2g5 + item.m3g5) / 3).toFixed(2)
-                }</td>
-                <td>${
-                    ((item.m1g7 + item.m2g7 + item.m3g7) / 3).toFixed(2)
-                }</td>
+                <td>${giro.f1}</td>
+                <td>${giro.f2}</td>
+                <td>${giro.f3}</td>
+                <td>${giro.f4}</td>
+                <td>${giro.f5}</td>
+                <td>${giro.f7}</td>
             </tr>
         `;
+
+        console.log(giro);
     }
 
     container.innerHTML = `
