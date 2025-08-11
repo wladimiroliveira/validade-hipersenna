@@ -63,7 +63,6 @@ if ($matricula === null) {
     die("Erro: Matrícula do usuário não encontrada ou inválida.");
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
